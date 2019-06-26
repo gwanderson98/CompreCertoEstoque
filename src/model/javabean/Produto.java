@@ -3,25 +3,25 @@ package model.javabean;
 import java.util.Calendar;
 
 public class Produto {
-	private Calendar data;
+	private int id;
 	private String nome;
 	private String cod_produto;
 	
 	
 	
-	public Produto(Calendar data, String nome, String cod_produto) {
+	public Produto(int id, String nome, String cod_produto) {
 		super();
-		this.data = data;
+		this.id = id;
 		this.nome = nome;
 		this.cod_produto = cod_produto;
 	}
 	
 	
-	public Calendar getData() {
-		return data;
+	public int getId() {
+		return id;
 	}
-	public void setData(Calendar data) {
-		this.data = data;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
