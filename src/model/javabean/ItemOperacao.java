@@ -9,6 +9,7 @@ public class ItemOperacao {
 		this.quantidadeProduto = quantidadeProduto;
 		this.produto = produto;
 	}
+	
 
 	public int getQuantidadeProduto() {
 		return quantidadeProduto;
@@ -22,6 +23,4 @@ public class ItemOperacao {
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-	
-	
 }

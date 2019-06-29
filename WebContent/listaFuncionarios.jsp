@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listar todos</title>
+<title>Listar Funcionarios</title>
 </head>
 <body>
 	<h1>Arquitetura de referência</h1>
@@ -32,17 +32,17 @@
 	<table border=1>
 		<thead>
 			<th>Nome</th>
-			<th>Usuario</th>
+			<th>E-mail</th>
 			<th>Senha</th>
 			<th>Ações</th>
 		</thead>
 		<tbody>
-			<c:forEach var="u" items="${usuarios}">
+			<c:forEach var="f" items="${funcionarios}">
 				<tr>
-					<td>${u.nome}</td>
-					<td>${u.nomeUsuario}</td>
-					<td>${u.senha}</td>
-					<td><a href="atualizar?id=${u.id}">Atualizar</a><a href="excluir?id=${u.id}">Excluir</a></td>
+					<td>${f.nomeFuncionario}</td>
+					<td>${f.email}</td>
+					<td>${f.senha}</td>
+					<td><a href="atualizar?id=${f.id}">Atualizar</a><a href="excluir?id=${f.id}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

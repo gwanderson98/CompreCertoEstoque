@@ -8,48 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.javabean.Cargo;
-import model.javabean.ItemOperacao;
 import model.javabean.Operacao;
-import model.javabean.Usuario;
-import model.javabean.Cargo;
 
-public class OperacaoDAO implements DAO {
-
+public class ItemOperacaoDAO implements DAO {
 	@Override
 	public Object recuperarPorId(Object id) {
 		Connection con = FabricaDeConexoes.getConnection();
 		Statement stmt = null;
 		Operacao operacao = null;
-		List<ItemOperacao> listaItem = new ArrayList<ItemOperacao>();
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM operacao where Id_func='" + (String) id + "'";
+			String sql = "SELECT * FROM funcionario where Id_func='" + (String) id + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				operacao = new Operacao(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
 						rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]);
-				
-				
-				String sql2 = "SELECT * FROM itemoperacao where Id_operaoca='" + (String) id + "'";
-				
-				ResultSet rs2 = stmt.executeQuery(sql2);
-				
-				while (rs2.next()) {
-					listaItem.add(new ItemOperacao(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
-							                       rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]));
-				}
-				
-				Operacao.setListaOperacao(listaItem);
-				
-				
-				//listaItem = new Operacao(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
-					//	rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]);
-				
-				
-				
-				//operacao.setListaItemOpercao(lista);
-				
-				
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -238,5 +211,4 @@ public class OperacaoDAO implements DAO {
 		}
 		return funcionario;
 	}
-
 }
