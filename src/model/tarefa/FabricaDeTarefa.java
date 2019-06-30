@@ -18,6 +18,7 @@ public class FabricaDeTarefa {
 		tarefas.put("GET/atualizar", t);
 		tarefas.put("POST/atualizar", t);
 		tarefas.put("GET/excluir", new ExcluirUsuarioTarefa());
+		tarefas.put("POST/cadastrarProduto",new CadastrarProduto());
 	}
 
 	public static Tarefa getTarefa(HttpServletRequest request) {

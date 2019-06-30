@@ -24,7 +24,7 @@ public class ProdutoDAO implements DAO {
 			String sql = "SELECT Id_produto,Nome,cod_produto FROM produto where Id_produto='" + (String) id + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				produto = new Produto(rs.getInt("Id_produto"),rs.getString("Nome"),rs.getString("cod_produto"));
+				produto = new Produto(rs.getString("Id_produto"),rs.getString("Nome"),rs.getString("cod_produto"));
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -115,7 +115,7 @@ public class ProdutoDAO implements DAO {
 			String sql = "SELECT Id_produto,Nome, Cod_produto FROM Produto;";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				produto.add(new Produto(rs.getInt("Id_produto"),rs.getString("Nome"),rs.getString("Cod_produto")));
+				produto.add(new Produto(rs.getString("Id_produto"),rs.getString("Nome"),rs.getString("Cod_produto")));
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -145,7 +145,7 @@ public class ProdutoDAO implements DAO {
 		try {
 			String Nome = ((Produto) entidade).getNome();
 			String Cod_produto = ((Produto) entidade).getCod_produto();
-			int Id_produto = ((Produto) entidade).getId();
+			String Id_produto = ((Produto) entidade).getId();
 			stmt = con.createStatement();
 			String sql = "UPDATE produto" + " SET Nome = '" + Nome + "'," + " Cod_produto ='" + Cod_produto + " WHERE id = " + Id_produto;
 			stmt.executeUpdate(sql);

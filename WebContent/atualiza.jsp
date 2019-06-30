@@ -16,6 +16,7 @@
 			<a href="logout">Logout</a>
 			<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
 			<a href="listarTodos">Listar todos</a>
+			<a href="cadastrarProduto">Cadastrar Produto</a>
 		</c:when>
 
 		<c:otherwise>
