@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.javabean.Cargo;
+import model.javabean.Funcionario;
 import model.javabean.ItemOperacao;
 import model.javabean.Operacao;
 

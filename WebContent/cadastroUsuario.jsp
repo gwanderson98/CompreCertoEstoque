@@ -17,6 +17,8 @@
 		<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
 		<a href="listarTodos">Listar todos</a>
 		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
+		<a href="cadastrarProduto">Cadastrar Produto</a>
+		
 		</c:when>
 
 		<c:otherwise>

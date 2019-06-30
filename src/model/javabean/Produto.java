@@ -3,13 +3,13 @@ package model.javabean;
 import java.util.Calendar;
 
 public class Produto {
-	private int id;
+	private String id;
 	private String nome;
 	private String cod_produto;
 	
 	
 	
-	public Produto(int id, String nome, String cod_produto) {
+	public Produto(String id, String nome, String cod_produto) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -17,10 +17,10 @@ public class Produto {
 	}
 	
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getNome() {

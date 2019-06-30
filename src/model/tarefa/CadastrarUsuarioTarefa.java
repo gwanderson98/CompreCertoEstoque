@@ -17,7 +17,7 @@ public class CadastrarUsuarioTarefa implements Tarefa {
 		// enviar dados para o DAO persistir
 		new UsuarioDAO().salvar(usuario);
 		//retornar o nome da view
-		request.setAttribute("msg", "parabéns usuario cadastrado com sucesso");
+		request.setAttribute("msg", "parabï¿½ns usuario cadastrado com sucesso");
 		return "cadastroUsuario";
 	}
 
