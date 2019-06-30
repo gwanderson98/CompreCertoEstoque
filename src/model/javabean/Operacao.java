@@ -1,26 +1,42 @@
 package model.javabean;
 
-import java.util.Calendar;
 import java.util.List;
 
 public class Operacao {
+	private int Id_operacao;
 	private char tipo;
-	private Calendar data;
+	private String data;
+	private int Id_func_fk;
 	private List<ItemOperacao> listaOperacao;
 	
-	public Operacao(char tipo, Calendar data) {
+	public Operacao(int Id_operacao,char tipo, String data,int Id_func_fk) {
 		super();
+		this.Id_operacao = Id_operacao;
 		this.tipo = tipo;
 		this.data = data;
+		this.Id_func_fk = Id_func_fk;
 	}
 	
+	public int getId_operacao() {
+		return Id_operacao;
+	}
+
+	public void setId_operacao(int id_operacao) {
+		Id_operacao = id_operacao;
+	}
+
+	public int getId_func_fk() {
+		return Id_func_fk;
+	}
+
+	public void setId_func_fk(int id_func_fk) {
+		Id_func_fk = id_func_fk;
+	}
+
 	public void setListaItemOpercao(List<ItemOperacao> lista) {
 		this.listaOperacao = lista;
 	}
-	
-	
 
-	
     public char getTipo() {
 		return tipo;
 	}
@@ -29,11 +45,11 @@ public class Operacao {
 		this.tipo = tipo;
 	}
 
-	public Calendar getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Calendar data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
@@ -44,13 +60,4 @@ public class Operacao {
 	public static void setListaOperacao(List<ItemOperacao> listaOperacao) {
 		listaOperacao = listaOperacao;
 	}
-
-	public void imprimir() {
-    	System.out.println("Data/Hora atual: "+this.data.getTime());
-        System.out.println("Ano: "+this.data.get(Calendar.YEAR));
-        System.out.println("Mês: "+this.data.get(Calendar.MONTH));
-        System.out.println("Dia do Mês: "+this.data.get(Calendar.DAY_OF_MONTH));
-    }
-    
-
 }

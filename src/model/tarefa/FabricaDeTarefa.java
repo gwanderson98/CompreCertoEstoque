@@ -13,7 +13,6 @@ public class FabricaDeTarefa {
 		tarefas.put("GET/logout", new LogoutTarefa());
 		tarefas.put("GET/exibeFormCadastroUsuario", new ExibeFormCadastroUsuarioTarefa());
 		tarefas.put("POST/cadastrarUsuario", new CadastrarUsuarioTarefa());
-		tarefas.put("GET/listarTodos", new ListarTodosTarefa());
 		tarefas.put("GET/listarFuncionarioTodos", new ListarTodosFuncionarios());
 		Tarefa t = new AtualizaUsuarioTarefa();
 		tarefas.put("GET/atualizar", t);

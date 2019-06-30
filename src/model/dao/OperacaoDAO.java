@@ -10,45 +10,33 @@ import java.util.List;
 import model.javabean.Cargo;
 import model.javabean.ItemOperacao;
 import model.javabean.Operacao;
-import model.javabean.Usuario;
-import model.javabean.Cargo;
 
 public class OperacaoDAO implements DAO {
 
+	public List<ItemOperacao> listaItem = new ArrayList<ItemOperacao>();
+	
 	@Override
 	public Object recuperarPorId(Object id) {
 		Connection con = FabricaDeConexoes.getConnection();
 		Statement stmt = null;
 		Operacao operacao = null;
-		List<ItemOperacao> listaItem = new ArrayList<ItemOperacao>();
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM operacao where Id_func='" + (String) id + "'";
+			String sql = "SELECT * FROM operacao where Id_operacao='" + (String) id + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				operacao = new Operacao(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
-						rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]);
+				operacao = new Operacao(rs.getInt("Id_operacao"),(char)rs.getInt("Tipo_operacao"),rs.getString("Data_operacao"),rs.getInt("Id_func_fk"));
 				
 				
-				String sql2 = "SELECT * FROM itemoperacao where Id_operaoca='" + (String) id + "'";
+				String sql2 = "SELECT * FROM itemoperacao where Id_operacao='" + (String) id + "'";
 				
 				ResultSet rs2 = stmt.executeQuery(sql2);
 				
 				while (rs2.next()) {
-					listaItem.add(new ItemOperacao(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
-							                       rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]));
+					listaItem.add(new ItemOperacao(rs.getInt("Id_item_opereacao"),rs.getInt("Id_operacao_fk"),rs.getInt("Id_produto_fk"),rs.getInt("quantidadeProduto")));
 				}
 				
-				Operacao.setListaOperacao(listaItem);
-				
-				
-				//listaItem = new Operacao(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
-					//	rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]);
-				
-				
-				
-				//operacao.setListaItemOpercao(lista);
-				
+				Operacao.setListaOperacao(listaItem);				
 				
 			}
 		} catch (SQLException se) {
@@ -67,7 +55,7 @@ public class OperacaoDAO implements DAO {
 				se2.printStackTrace();
 			}
 		}
-		return funcionario;
+		return operacao;
 	}
 
 	@Override
@@ -76,13 +64,13 @@ public class OperacaoDAO implements DAO {
 		Connection con = FabricaDeConexoes.getConnection();
 		// montar a consulta
 		Statement stmt = null;
-		Funcionario funcionario = null;
+		Operacao operacao = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "insert into funcionario(Email, Nome_func, Senha, Cargo, CPF, Telefone) values('" + ((Funcionario) entidade).getEmail() + "','"
-					+ ((Funcionario) entidade).getNomeFuncionario() + "','" + ((Funcionario) entidade).getSenha() + "','" + ((Funcionario) entidade).getCargo()+"','"
-					+ ((Funcionario) entidade).getCPF() + "','"+ ((Funcionario) entidade).getTelefone()+ "');";
+			String sql = "insert into operacao(Tipo_operacao,Data_produto_fk,Id_funk_fk) values('" + ((Operacao) entidade).getTipo() + "','"+ ((Operacao) entidade).getData() + "','"+ ((Operacao) entidade).getId_func_fk()+ "');";
+			String sql2 = "insert into item_operacao(Id_operacao_fk,Id_produto_fk,Quantidade_produto) values('" + ((ItemOperacao) entidade).getId_item_opereacao() + "','"+ ((ItemOperacao) entidade).getId_operacao_fk() +"','"+ ((ItemOperacao) entidade).getId_produto_fk()+"','"+ ((ItemOperacao) entidade).getQuantidadeProduto()+ "');";
 			System.out.println(sql);
+			System.out.println(sql2);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
 			se.printStackTrace();
