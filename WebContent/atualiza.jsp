@@ -31,11 +31,17 @@
 	<hr>
 	<c:if test="${!empty usuario }">
 		<form action="atualizar" method="POST">
-			<input type="hidden" name="id" value="${entidade.id}"> Usuario:<input
-				name="usuario" value="${entidade.nomeUsuario}"> Senha:<input
-				name="senha" value="${entidade.senha}"> Nome completo: <input
-				name="nome" value="${entidade.nome}"> <input type="submit"
-				value="Atualizar">
+			<input type="hidden" name="id" value="${entidade.CPF}"> 
+				telefone:<input name="telefone"> 
+				CPF:<input name="CPF">
+				senha: <input name="senha">
+				nomeFuncionario: <input name="nomeFuncionario">
+				email: <input name="email">
+				<select name="cargo">
+					<option value="0">Funcionario</option>
+		   			<option value="1">Administrador</option>
+				</select>
+			<input type="submit" value="Atualizar">
 		</form>
 	</c:if>
 </body>

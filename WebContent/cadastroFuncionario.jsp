@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de usuário</title>
+<title>Cadastro de Funcionario</title>
 </head>
 <body>
 <h1>Arquitetura de referência</h1>
@@ -25,7 +25,7 @@
 			<c:if test="${erro != NULL}">${erro}</c:if>
 
 			<form action="login" method="post">
-				Usuario:<input name="usuario">
+				Usuario:<input name="usuario"> 
 				Senha:<input name="senha">
 				<input type="submit" value="ok">
 			</form>
@@ -33,17 +33,11 @@
 	</c:choose>
 	<hr>
 	${msg}
-	<form action="cadastrarFuncionario" method="post">
-		telefone:<input name="telefone"> 
-		CPF:<input name="CPF">
-		senha: <input name="senha">
-		nomeFuncionario: <input name="nomeFuncionario">
-		email: <input name="email">
-		<select name="cargo">
-			<option value="0">Funcionario</option>
-   			<option value="1">Administrador</option>
-		</select>
-		<input type="submit" value="ok">
+	<form action="cadastrarUsuario" method="post">
+		Usuario:<input name="usuario"> 
+		Senha:<input name="senha">
+		Nome completo: <input name="nome"> <input type="submit"
+			value="ok">
 	</form>
 </body>
 </html>

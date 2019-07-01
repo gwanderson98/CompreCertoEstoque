@@ -14,11 +14,15 @@ public class FabricaDeTarefa {
 		tarefas.put("GET/exibeFormCadastroUsuario", new ExibeFormCadastroUsuarioTarefa());
 		tarefas.put("POST/cadastrarUsuario", new CadastrarUsuarioTarefa());
 		tarefas.put("GET/listarFuncionarioTodos", new ListarTodosFuncionarios());
+		tarefas.put("POST/cadastrarFuncionario", new CadastrarFuncionario());
 		Tarefa t = new AtualizaUsuarioTarefa();
 		tarefas.put("GET/atualizar", t);
 		tarefas.put("POST/atualizar", t);
 		tarefas.put("GET/excluir", new ExcluirUsuarioTarefa());
 		tarefas.put("POST/cadastrarProduto",new CadastrarProduto());
+		
+		tarefas.put("GET/atualizar", new AtualizarFuncionario());
+		tarefas.put("POST/atualizar",new AtualizarFuncionario());
 	}
 
 	public static Tarefa getTarefa(HttpServletRequest request) {

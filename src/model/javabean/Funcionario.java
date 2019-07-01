@@ -1,7 +1,6 @@
 package model.javabean;
 
 public class Funcionario {
-	private int id;
 	private String telefone;
 	private String CPF;
 	private String senha;
@@ -9,24 +8,16 @@ public class Funcionario {
 	private String email;
 	private Cargo cargo;
 	
-	public Funcionario(int id ,String telefone, String CPF, String senha, String nomeFuncionario, String email, Cargo cargo) {
+	public Funcionario(String telefone, String CPF, String senha, String nomeFuncionario, String email) {
 		super();
-		this.id = id;
 		this.telefone = telefone;
 		this.CPF = CPF;
 		this.senha = senha;
 		this.nomeFuncionario = nomeFuncionario;
 		this.email = email;
-		this.cargo = cargo;
+	//	this.cargo = cargo;
 	}
 	
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getTelefone() {
 		return telefone;
 	}

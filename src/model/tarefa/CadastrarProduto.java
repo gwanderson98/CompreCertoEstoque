@@ -7,6 +7,8 @@ import model.dao.ProdutoDAO;
 import model.javabean.Produto;
 
 public class CadastrarProduto implements Tarefa {
+	
+	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// recuperar os parametros do formulario
 		Produto produto = new Produto(request.getParameter("id"), 

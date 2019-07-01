@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listar Funcionarios</title>
+<title>Atualizar Funcionario</title>
 </head>
 <body>
 	<h1>Arquitetura de referência</h1>
@@ -15,48 +15,28 @@
 			<h1>Olá ${usuario.nome}</h1>
 			<a href="logout">Logout</a>
 			<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
-			<a href="listarTodos">Listar Usuarios </a>
-			<a href="listarFuncionarioTodos">Listar Funcionarios </a>
+			<a href="listarTodos">Listar todos</a>
 			<a href="cadastrarProduto">Cadastrar Produto</a>
 		</c:when>
 
 		<c:otherwise>
 			<c:if test="${erro != NULL}">${erro}</c:if>
 
-			<form action="login" method="post">
+			<form action="/sistema/frontcontroller/login" method="post">
 				Usuario:<input name="usuario"> Senha:<input name="senha">
 				<input type="submit" value="ok">
 			</form>
 		</c:otherwise>
 	</c:choose>
 	<hr>
-	<table border=1>
-		<thead>
-			<th>Nome</th>
-			<th>E-mail</th>
-			<th>Senha</th>
-			<th>Telefone</th>
-			<th>CPF</th>
-			<th>Ações</th>
-		</thead>
-		<tbody>
-			<c:forEach var="f" items="${funcionarios}">
-				<tr>
-					<td>${f.nomeFuncionario}</td>
-					<td>${f.email}</td>
-					<td>${f.senha}</td>
-					<td>${f.telefone}</td>
-					<td>${f.CPF}</td>
-					<td><a href="atualizar?CPF=${f.CPF}">Atualizar</a><a href="excluir?CPF=${f.CPF}">Excluir</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<c:if test="${!empty usuario }">
+		<form action="atualizar" method="POST">
+			<input type="hidden" name="id" value="${entidade.id}"> Usuario:<input
+				name="usuario" value="${entidade.nomeUsuario}"> Senha:<input
+				name="senha" value="${entidade.senha}"> Nome completo: <input
+				name="nome" value="${entidade.nome}"> <input type="submit"
+				value="Atualizar">
+		</form>
+	</c:if>
 </body>
 </html>
-
-
-
-
-
-

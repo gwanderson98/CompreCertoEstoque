@@ -15,17 +15,18 @@ import model.javabean.Cargo;
 public class FuncionarioDAO implements DAO {
 
 	@Override
-	public Object recuperarPorId(Object id) {
+	public Object recuperarPorId(Object CPF) {
 		Connection con = FabricaDeConexoes.getConnection();
 		Statement stmt = null;
 		Funcionario funcionario = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM funcionario where Id_func='" + (String) id + "'";
+			String sql = "SELECT * FROM funcionario where CPF='" + (String) CPF + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				funcionario = new Funcionario(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
-						rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]);
+				funcionario = new Funcionario(rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
+						rs.getString("Nome_func"), rs.getString("Email"));
+				//,Cargo.values()[rs.getInt("Cargo")]
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -80,14 +81,14 @@ public class FuncionarioDAO implements DAO {
 	}
 
 	@Override
-	public void excluir(Object id) {
+	public void excluir(Object CPF) {
 		// conectar com sgbd
 		Connection con = FabricaDeConexoes.getConnection();
 		// montar a consulta
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "delete from funcionarios where id_func="+id;
+			String sql = "delete from funcionarios where id_func="+CPF;
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
@@ -118,8 +119,9 @@ public class FuncionarioDAO implements DAO {
 			String sql = "SELECT Id_func,Telefone,CPF,Senha,Nome_func,Email,Cargo FROM funcionario;";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				funcionario.add(new Funcionario(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
-						rs.getString("Nome_func"), rs.getString("Email"),Cargo.values()[rs.getInt("Cargo")]));
+				funcionario.add(new Funcionario(rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
+						rs.getString("Nome_func"), rs.getString("Email")));
+				//Cargo.values()[rs.getInt("Cargo")];
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -153,10 +155,9 @@ public class FuncionarioDAO implements DAO {
 			String Nome_func = ((Funcionario) entidade).getNomeFuncionario();
 			String Email = ((Funcionario) entidade).getEmail();
 			int cargo = ((Funcionario) entidade).getCargo().getIndice();
-			int id = ((Funcionario) entidade).getId();
 			stmt = con.createStatement();
 			String sql = "UPDATE funcionario" + " SET Nome_func = '" + Nome_func + "'," + " Senha ='" + Senha + "'," + " CPF = '"
-					+ CPF + " SET Email = '" + Email + "'," + " SET Telefone = '" + Telefone + "'," + " SET cargo = " + cargo + " WHERE id = " + id;
+					+ CPF + " SET Email = '" + Email + "'," + " SET Telefone = '" + Telefone + "'," + " SET cargo = " + cargo + " WHERE id = " + CPF;
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -193,8 +194,8 @@ public class FuncionarioDAO implements DAO {
 				String Nome_func = rs.getString("Nome_func");
 				String Email = rs.getString("Email");
 				int cargo = rs.getInt("Cargo");
-				int id = rs.getInt("Id_func");
-				funcionario = new Funcionario(id,Telefone,CPF,Senha,Nome_func,Email, Cargo.values()[cargo]);
+				funcionario = new Funcionario(Telefone,CPF,Senha,Nome_func,Email);
+				//, Cargo.values()[cargo]
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
