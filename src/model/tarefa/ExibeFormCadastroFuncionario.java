@@ -3,11 +3,11 @@ package model.tarefa;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ExibeFormCadastroUsuarioTarefa implements Tarefa {
+public class ExibeFormCadastroFuncionario implements Tarefa {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return "cadastroUsuario";
+		return "cadastroFuncionario";
 	}
 
 }

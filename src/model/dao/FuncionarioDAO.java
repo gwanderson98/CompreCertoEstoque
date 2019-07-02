@@ -56,8 +56,9 @@ public class FuncionarioDAO implements DAO {
 		Funcionario funcionario = null;
 		try {
 			stmt = con.createStatement();
+			//((Funcionario) entidade).getCargo()
 			String sql = "insert into funcionario(Email, Nome_func, Senha, Cargo, CPF, Telefone) values('" + ((Funcionario) entidade).getEmail() + "','"
-					+ ((Funcionario) entidade).getNomeFuncionario() + "','" + ((Funcionario) entidade).getSenha() + "','" + ((Funcionario) entidade).getCargo()+"','"
+					+ ((Funcionario) entidade).getNomeFuncionario() + "','" + ((Funcionario) entidade).getSenha() + "','" + 1+"','"
 					+ ((Funcionario) entidade).getCPF() + "','"+ ((Funcionario) entidade).getTelefone()+ "');";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
@@ -88,25 +89,9 @@ public class FuncionarioDAO implements DAO {
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
-			String Id_func = "select Id_func from funcionario where CPF='" + CPF+"';";
-			System.out.println(Id_func);
-			ResultSet resultId_func = stmt.executeQuery(Id_func);
-			String Id_operacao = "select Id_operacao from operacao where Id_func_fk =" +resultId_func.getString("Id_func")+"';";
-			System.out.println(Id_operacao);
-			ResultSet rs = stmt.executeQuery(Id_operacao);
-			while (rs.next()) {
-				String excluirItem_operacao = "delete from item_operacao where Id_operacao_fk = " + rs.getString("Id_operacao") +";";
-				System.out.println(excluirItem_operacao);
-				stmt.executeQuery(excluirItem_operacao);
-			}
-			while (rs.next()) {
-				String excluirId_operacao = "delete from operacao where Id_func_fk =" +resultId_func.getString("Id_func")+"';";
-				System.out.println(excluirId_operacao);
-				stmt.executeQuery(excluirId_operacao);
-			}
 			String excluirId_func = "delete from funcionario where CPF='" + CPF+"';";
 			System.out.println(excluirId_func);
-			stmt.executeQuery(excluirId_func);
+			stmt.executeUpdate(excluirId_func);
 		} catch (SQLException se) {
 			se.printStackTrace();
 		} catch (Exception e) {

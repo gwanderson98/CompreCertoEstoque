@@ -14,7 +14,7 @@
 		<c:when test="${usuario != NULL}">
 			<h1>Olá ${usuario.nome}</h1>
 		<a href="logout">Logout</a>
-		<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
+		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
 		<a href="listarTodos">Listar todos</a>
 		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
 		<a href="cadastrarProduto">Cadastrar Produto</a>
@@ -33,11 +33,16 @@
 	</c:choose>
 	<hr>
 	${msg}
-	<form action="cadastrarUsuario" method="post">
-		Usuario:<input name="usuario"> 
-		Senha:<input name="senha">
-		Nome completo: <input name="nome"> <input type="submit"
-			value="ok">
+	<form action="cadastrarFuncionario" method="post">
+		telefone:<input name="telefone"> 
+		CPF:<input name="CPF">
+		senha: <input name="senha">
+		nomeFuncionario: <input name="nomeFuncionario">
+		email: <input name="email">
+		<select name="cargo">
+			<option value="0">Funcionario</option>
+   			<option value="1">Administrador</option>
+		</select>
+		<input type="submit" value="ok">
 	</form>
-</body>
 </html>

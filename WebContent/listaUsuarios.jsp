@@ -14,10 +14,10 @@
 		<c:when test="${usuario != NULL}">
 			<h1>Olá ${usuario.nome}</h1>
 			<a href="logout">Logout</a>
-			<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
-			<a href="listarTodos">Listar Usuarios </a>
-			<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-			<a href="cadastrarProduto">Cadastrar Produto</a>
+		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
+		<a href="listarTodos">Listar todos</a>
+		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
+		<a href="cadastrarProduto">Cadastrar Produto</a>a>
 		</c:when>
 
 		<c:otherwise>

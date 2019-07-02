@@ -11,7 +11,7 @@ public class FabricaDeTarefa {
 	static {
 		tarefas.put("POST/login", new LoginTarefa());
 		tarefas.put("GET/logout", new LogoutTarefa());
-		tarefas.put("GET/exibeFormCadastroUsuario", new ExibeFormCadastroUsuarioTarefa());
+		tarefas.put("GET/exibeFormCadastroFuncionario", new ExibeFormCadastroFuncionario());
 		tarefas.put("POST/cadastrarUsuario", new CadastrarUsuarioTarefa());
 		tarefas.put("GET/listarFuncionarioTodos", new ListarTodosFuncionarios());
 		tarefas.put("POST/cadastrarFuncionario", new CadastrarFuncionario());
