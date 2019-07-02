@@ -8,16 +8,17 @@
 <title>Listar todos</title>
 </head>
 <body>
-	<h1>Arquitetura de referência</h1>
+	<h1>Arquitetura de referï¿½ncia</h1>
 	<hr>
 	<c:choose>
 		<c:when test="${usuario != NULL}">
-			<h1>Olá ${usuario.nome}</h1>
+			<h1>Olï¿½ ${usuario.nome}</h1>
 			<a href="logout">Logout</a>
 		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
 		<a href="listarTodos">Listar todos</a>
 		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-		<a href="cadastrarProduto">Cadastrar Produto</a>a>
+			<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
+			<a href="listarProdutos">Listar Produtos</a>
 		</c:when>
 
 		<c:otherwise>
@@ -35,7 +36,7 @@
 			<th>Nome</th>
 			<th>Usuario</th>
 			<th>Senha</th>
-			<th>Ações</th>
+			<th>Aï¿½ï¿½es</th>
 		</thead>
 		<tbody>
 			<c:forEach var="u" items="${usuarios}">
