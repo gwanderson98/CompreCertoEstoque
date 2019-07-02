@@ -21,7 +21,7 @@ public class FuncionarioDAO implements DAO {
 		Funcionario funcionario = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM funcionario where CPF='" + (String) CPF + "'";
+			String sql = "SELECT * FROM Funcionario where CPF='" + (String) CPF + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				funcionario = new Funcionario(rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
@@ -116,7 +116,7 @@ public class FuncionarioDAO implements DAO {
 		List<Funcionario> funcionario = new ArrayList<Funcionario>();
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT Id_func,Telefone,CPF,Senha,Nome_func,Email,Cargo FROM funcionario;";
+			String sql = "SELECT Id_func,Telefone,CPF,Senha,Nome_func,Email,Cargo FROM Funcionario;";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				funcionario.add(new Funcionario(rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
@@ -154,10 +154,9 @@ public class FuncionarioDAO implements DAO {
 			String Senha = ((Funcionario) entidade).getSenha();
 			String Nome_func = ((Funcionario) entidade).getNomeFuncionario();
 			String Email = ((Funcionario) entidade).getEmail();
-			int cargo = ((Funcionario) entidade).getCargo().getIndice();
+			int cargo = 1; //((Funcionario) entidade).getCargo().getIndice()
 			stmt = con.createStatement();
-			String sql = "UPDATE funcionario" + " SET Nome_func = '" + Nome_func + "'," + " Senha ='" + Senha + "'," + " CPF = '"
-					+ CPF + " SET Email = '" + Email + "'," + " SET Telefone = '" + Telefone + "'," + " SET cargo = " + cargo + " WHERE id = " + CPF;
+			String sql = "UPDATE Funcionario" + " SET Nome_func = '" + Nome_func + "'," + " Senha ='" + Senha + "'," + "Email = '" + Email + "'," + " Telefone = '" + Telefone + "'," + "cargo = " + cargo + " WHERE CPF = '" + CPF+"';";
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
 			se.printStackTrace();

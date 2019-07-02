@@ -22,7 +22,7 @@
 		<c:otherwise>
 			<c:if test="${erro != NULL}">${erro}</c:if>
 
-			<form action="/sistema/frontcontroller/login" method="post">
+			<form action="/comprecertoestoque/frontcontroller/login" method="post">
 				Usuario:<input name="usuario"> Senha:<input name="senha">
 				<input type="submit" value="ok">
 			</form>
@@ -30,12 +30,18 @@
 	</c:choose>
 	<hr>
 	<c:if test="${!empty usuario }">
-		<form action="atualizar" method="POST">
-			<input type="hidden" name="id" value="${entidade.id}"> Usuario:<input
-				name="usuario" value="${entidade.nomeUsuario}"> Senha:<input
-				name="senha" value="${entidade.senha}"> Nome completo: <input
-				name="nome" value="${entidade.nome}"> <input type="submit"
-				value="Atualizar">
+		<form action="/comprecertoestoque/frontcontroller/atualizarFuncionario" method="POST">
+			<input type="hidden" name="CPF" value="${entidade.CPF}"> 
+				telefone:<input name="telefone" value="${entidade.telefone}"> 
+				CPF:<input name="CPF" value="${entidade.CPF}">
+				senha: <input name="senha" value="${entidade.senha}">
+				nomeFuncionario: <input name="nomeFuncionario" value="${entidade.nomeFuncionario}">
+				email: <input name="email" value="${entidade.email}">
+				<select name="cargo">
+					<option value="0">Funcionario</option>
+		   			<option value="1">Administrador</option>
+				</select>
+			<input type="submit" value="Atualizar">
 		</form>
 	</c:if>
 </body>

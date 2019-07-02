@@ -22,7 +22,7 @@
 		<c:otherwise>
 			<c:if test="${erro != NULL}">${erro}</c:if>
 
-			<form action="/sistema/frontcontroller/login" method="post">
+			<form action="/comprecertoestoque/frontcontroller/login" method="post">
 				Usuario:<input name="usuario"> Senha:<input name="senha">
 				<input type="submit" value="ok">
 			</form>

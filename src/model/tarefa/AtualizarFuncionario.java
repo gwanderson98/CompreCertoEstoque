@@ -28,9 +28,9 @@ public class AtualizarFuncionario implements Tarefa {
 		}
 	
 		private String exibeForm(HttpServletRequest request) {
-			Funcionario funcionario = (Funcionario) new FuncionarioDAO().recuperarPorId(request.getParameter("id"));
+			Funcionario funcionario = (Funcionario) new FuncionarioDAO().recuperarPorId(request.getParameter("CPF"));
 			request.setAttribute("entidade",funcionario);
-			return "atualiza";
+			return "atualizaFuncionario";
 		}
 
 }

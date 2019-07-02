@@ -23,7 +23,7 @@
 		<c:otherwise>
 			<c:if test="${erro != NULL}">${erro}</c:if>
 
-			<form action="login" method="post">
+			<form action="/comprecertoestoque/frontcontroller/login" method="post">
 				Usuario:<input name="usuario"> Senha:<input name="senha">
 				<input type="submit" value="ok">
 			</form>
@@ -47,7 +47,7 @@
 					<td>${f.senha}</td>
 					<td>${f.telefone}</td>
 					<td>${f.CPF}</td>
-					<td><a href="atualizar?CPF=${f.CPF}">Atualizar</a><a href="excluir?CPF=${f.CPF}">Excluir</a></td>
+					<td><a href="atualizarFuncionario?CPF=${f.CPF}">Atualizar</a><a href="excluir?CPF=${f.CPF}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
