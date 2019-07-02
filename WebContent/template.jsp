@@ -6,7 +6,8 @@
 		<a href="logout">Logout</a>
 		<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
 		<a href="listarTodos">Listar todos</a>
-		<a href="cadastrarProduto">Cadastrar Produto</a>
+		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
+		<a href="listarProdutos">Listar Produtos</a>
 	</c:when>
 
 	<c:otherwise>

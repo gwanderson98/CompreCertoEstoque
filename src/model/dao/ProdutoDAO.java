@@ -54,7 +54,7 @@ public class ProdutoDAO implements DAO {
 		Produto produto= null;
 		try {
 			stmt = con.createStatement();
-			String sql = "insert into produto(Nome, Cod_produto) values('" + ((Produto) entidade).getNome() + "','" + ((Produto) entidade).getCod_produto()+ "');";
+			String sql = "insert into Produto(Nome, Cod_produto) values ('"+ ((Produto) entidade).getNome() +"',"+"'" + ((Produto) entidade).getCod_produto() +"');";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {

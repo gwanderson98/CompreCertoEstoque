@@ -17,7 +17,7 @@ public class CadastrarProduto implements Tarefa {
 		// enviar dados para o DAO persistir
 		new ProdutoDAO().salvar(produto);
 		//retornar o nome da view
-		request.setAttribute("msg", "parab�ns usuario cadastrado com sucesso");
-		return "cadastroUsuario";
+		request.setAttribute("msg", "parabéns produto cadastrado com sucesso");
+		return "cadastroProduto";
 	}
 }
