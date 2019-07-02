@@ -21,7 +21,7 @@ public class ProdutoDAO implements DAO {
 		Produto produto= null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT Id_produto,Nome,cod_produto FROM produto where Id_produto='" + (String) id + "'";
+			String sql = "SELECT Id_produto,Nome,cod_produto FROM Produto where Id_produto='" + (String) id + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				produto = new Produto(rs.getString("Id_produto"),rs.getString("Nome"),rs.getString("cod_produto"));
@@ -77,14 +77,14 @@ public class ProdutoDAO implements DAO {
 	}
 
 	@Override
-	public void excluir(Object id) {
+	public void excluir(Object Id_produto) {
 		// conectar com sgbd
 		Connection con = FabricaDeConexoes.getConnection();
 		// montar a consulta
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "delete from produto where Id_produto="+id;
+			String sql = "delete from Produto where Id_produto="+Id_produto+";";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
@@ -147,7 +147,7 @@ public class ProdutoDAO implements DAO {
 			String Cod_produto = ((Produto) entidade).getCod_produto();
 			String Id_produto = ((Produto) entidade).getId();
 			stmt = con.createStatement();
-			String sql = "UPDATE produto" + " SET Nome = '" + Nome + "'," + " Cod_produto ='" + Cod_produto + " WHERE id = " + Id_produto;
+			String sql = "UPDATE Produto" + " SET Nome = '" + Nome + "'," + " Cod_produto ='" + Cod_produto + " WHERE Id_produto = " + Id_produto + ";";
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
 			se.printStackTrace();

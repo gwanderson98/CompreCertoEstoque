@@ -38,7 +38,7 @@
 			<th>Senha</th>
 			<th>Telefone</th>
 			<th>CPF</th>
-			<th>Aï¿½ï¿½es</th>
+			<th>Ações</th>
 		</thead>
 		<tbody>
 			<c:forEach var="f" items="${funcionarios}">

@@ -5,20 +5,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listar Funcionarios</title>
+<title>Atualizar Funcionario</title>
 </head>
 <body>
-	<h1>Arquitetura de referência</h1>
+	<h1>Arquitetura de referï¿½ncia</h1>
 	<hr>
 	<c:choose>
 		<c:when test="${usuario != NULL}">
-			<h1>Olá ${usuario.nome}</h1>
+			<h1>Olï¿½ ${usuario.nome}</h1>
 			<a href="logout">Logout</a>
-			<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
-			<a href="listarTodos">Listar Usuarios </a>
+			<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
+			<a href="listarTodos">Listar todos</a>
 			<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-			<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
 			<a href="listarProdutos">Listar Produtos</a>
+			<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
 		</c:when>
 
 		<c:otherwise>
@@ -31,29 +31,13 @@
 		</c:otherwise>
 	</c:choose>
 	<hr>
-	<table border=1>
-		<thead>
-			<th>Id</th>
-			<th>Nome</th>
-			<th>Codigo do Produto</th>
-			<th>Ações</th>
-		</thead>
-		<tbody>
-			<c:forEach var="pro" items="${produtos}">
-				<tr>
-					<td>${pro.Id_produto}</td>
-					<td>${pro.Nome}</td>
-					<td>${pro.Cod_produto}</td>
-					<td><a href="atualizarProduto?Id_produto=${pro.Id_produto}">Atualizar</a><a href="excluirProduto?Id_produto=${pro.Id_produto}">Excluir</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<c:if test="${!empty produto }">
+		<form action="/comprecertoestoque/frontcontroller/atualizaProduto" method="POST">
+				Id :<input name="Id" value="${entidade.Id_produto}"> 
+				Nome:<input name="Nome" value="${entidade.Nome}">
+				Codigo Produto: <input name="Cod_produto" value="${entidade.Cod_produto}">
+			<input type="submit" value="Atualizar">
+		</form>
+	</c:if>
 </body>
 </html>
-
-
-
-
-
-

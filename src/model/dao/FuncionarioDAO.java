@@ -57,7 +57,7 @@ public class FuncionarioDAO implements DAO {
 		try {
 			stmt = con.createStatement();
 			//((Funcionario) entidade).getCargo()
-			String sql = "insert into funcionario(Email, Nome_func, Senha, Cargo, CPF, Telefone) values('" + ((Funcionario) entidade).getEmail() + "','"
+			String sql = "insert into Funcionario(Email, Nome_func, Senha, Cargo, CPF, Telefone) values('" + ((Funcionario) entidade).getEmail() + "','"
 					+ ((Funcionario) entidade).getNomeFuncionario() + "','" + ((Funcionario) entidade).getSenha() + "','" + 1+"','"
 					+ ((Funcionario) entidade).getCPF() + "','"+ ((Funcionario) entidade).getTelefone()+ "');";
 			System.out.println(sql);
@@ -89,7 +89,7 @@ public class FuncionarioDAO implements DAO {
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
-			String excluirId_func = "delete from funcionario where CPF='" + CPF+"';";
+			String excluirId_func = "delete from Funcionario where CPF='" + CPF+"';";
 			System.out.println(excluirId_func);
 			stmt.executeUpdate(excluirId_func);
 		} catch (SQLException se) {
@@ -184,7 +184,7 @@ public class FuncionarioDAO implements DAO {
 		Funcionario funcionario = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT Id_func,Telefone,CPF,Senha, Nome_func, Email, Cargo FROM funcionario where Nome_func ='" + nomeFuncionario + "' and Senha='" + senha + "'";
+			String sql = "SELECT Id_func,Telefone,CPF,Senha, Nome_func, Email, Cargo FROM Funcionario where Nome_func ='" + nomeFuncionario + "' and Senha='" + senha + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				

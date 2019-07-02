@@ -11,17 +11,23 @@ public class FabricaDeTarefa {
 	static {
 		tarefas.put("POST/login", new LoginTarefa());
 		tarefas.put("GET/logout", new LogoutTarefa());
-		tarefas.put("GET/exibeFormCadastroFuncionario", new ExibeFormCadastroFuncionario());
+		//usuario (disponibilizado pelo professor)
 		tarefas.put("POST/cadastrarUsuario", new CadastrarUsuarioTarefa());
-		tarefas.put("GET/listarFuncionarioTodos", new ListarTodosFuncionarios());
-		tarefas.put("POST/cadastrarFuncionario", new CadastrarFuncionario());
 		Tarefa t = new AtualizaUsuarioTarefa();
 		tarefas.put("GET/atualizar", t);
 		tarefas.put("POST/atualizar", t);
 		tarefas.put("GET/excluir", new ExcluirUsuarioTarefa());
+		//produto
 		tarefas.put("GET/exibeFormCadastroProduto", new ExibeFormCadastroProduto());
 		tarefas.put("POST/cadastrarProduto",new CadastrarProduto());
 		tarefas.put("GET/listarProdutos", new ListaProdutos());
+		tarefas.put("GET/atualizarProduto", new AtualizaProduto());
+		tarefas.put("POST/atualizarProduto", new AtualizaProduto());
+		tarefas.put("GET/excluirProduto", new ExcluirProduto());
+		//funcionario
+		tarefas.put("GET/listarFuncionarioTodos", new ListarTodosFuncionarios());
+		tarefas.put("POST/cadastrarFuncionario", new CadastrarFuncionario());
+		tarefas.put("GET/exibeFormCadastroFuncionario", new ExibeFormCadastroFuncionario());
 		tarefas.put("GET/excluirFuncionario", new ExcluirFuncionario());
 		tarefas.put("GET/atualizarFuncionario", new AtualizarFuncionario());
 		tarefas.put("POST/atualizarFuncionario",new AtualizarFuncionario());
