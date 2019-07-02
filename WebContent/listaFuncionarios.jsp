@@ -47,7 +47,7 @@
 					<td>${f.senha}</td>
 					<td>${f.telefone}</td>
 					<td>${f.CPF}</td>
-					<td><a href="atualizarFuncionario?CPF=${f.CPF}">Atualizar</a><a href="excluir?CPF=${f.CPF}">Excluir</a></td>
+					<td><a href="atualizarFuncionario?CPF=${f.CPF}">Atualizar</a><a href="excluirFuncionario?CPF=${f.CPF}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

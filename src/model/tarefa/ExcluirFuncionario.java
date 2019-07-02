@@ -9,8 +9,8 @@ public class ExcluirFuncionario implements Tarefa {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String id = request.getParameter("id");
-		new FuncionarioDAO().excluir(id);
+		String CPF = request.getParameter("CPF");
+		new FuncionarioDAO().excluir(CPF);
 		return "index";
 	}
 
