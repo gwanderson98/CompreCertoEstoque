@@ -16,7 +16,7 @@ public class FabricaDeConexoes {
 		}
 		try {
 			//dbc:mysql://localhost:3306/
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/CompreCertoEstoque?useTimezone=true&serverTimezone=UTC", "root", "M@riaVanderson8872");			
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/CompreCertoEstoque?useTimezone=true&serverTimezone=UTC", "root", "");	//M@riaVanderson8872		
 			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

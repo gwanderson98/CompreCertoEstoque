@@ -9,20 +9,15 @@ public class FabricaDeTarefa {
 
 	static Map<String, Tarefa> tarefas = new HashMap<String, Tarefa>();
 	static {
+		//usuario (disponibilizado pelo professor)
 		tarefas.put("POST/login", new LoginTarefa());
 		tarefas.put("GET/logout", new LogoutTarefa());
-		//usuario (disponibilizado pelo professor)
-		tarefas.put("POST/cadastrarUsuario", new CadastrarUsuarioTarefa());
-		Tarefa t = new AtualizaUsuarioTarefa();
-		tarefas.put("GET/atualizar", t);
-		tarefas.put("POST/atualizar", t);
-		tarefas.put("GET/excluir", new ExcluirUsuarioTarefa());
 		//produto
 		tarefas.put("GET/exibeFormCadastroProduto", new ExibeFormCadastroProduto());
 		tarefas.put("POST/cadastrarProduto",new CadastrarProduto());
-		tarefas.put("GET/listarProdutos", new ListaProdutos());
-		tarefas.put("GET/atualizarProduto", new AtualizaProduto());
-		tarefas.put("POST/atualizarProduto", new AtualizaProduto());
+		tarefas.put("GET/listarProdutos", new ListarProdutos());
+		tarefas.put("GET/atualizarProduto", new AtualizarProduto());
+		tarefas.put("POST/atualizarProduto", new AtualizarProduto());
 		tarefas.put("GET/excluirProduto", new ExcluirProduto());
 		//funcionario
 		tarefas.put("GET/listarFuncionarioTodos", new ListarTodosFuncionarios());

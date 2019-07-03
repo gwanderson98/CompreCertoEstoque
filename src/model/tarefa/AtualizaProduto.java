@@ -24,7 +24,7 @@ public class AtualizaProduto implements Tarefa{
 			return retorno;
 		}
 		private String atualizaRegistroProduct(HttpServletRequest request) {
-			Produto produto = new Produto(request.getParameter("Id_produto"), request.getParameter("Nome"), request.getParameter("Cod_produto"));
+			Produto produto = new Produto(Integer.parseInt(request.getParameter("Id_produto")), request.getParameter("Nome"), request.getParameter("Cod_produto"));
 			new ProdutoDAO().atualizar(produto);
 			return "listaProdutos";
 		}

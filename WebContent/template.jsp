@@ -4,8 +4,8 @@
 	<c:when test="${usuario != NULL}">
 		<h1>Olá ${usuario.nome}</h1>
 		<a href="logout">Logout</a>
-		<a href="exibeFormCadastroUsuario">Cadastrar novo usuário</a>
-		<a href="listarTodos">Listar todos</a>
+		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
+		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
 		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
 		<a href="listarProdutos">Listar Produtos</a>
 	</c:when>

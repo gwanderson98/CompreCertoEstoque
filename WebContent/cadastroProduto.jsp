@@ -15,7 +15,6 @@
 			<h1>Olá ${usuario.nome}</h1>
 		<a href="logout">Logout</a>
 		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-		<a href="listarTodos">Listar todos</a>
 		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
 		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
 		<a href="listarProdutos">Listar Produtos</a>
@@ -34,8 +33,8 @@
 	${msg}
 	<form action="/comprecertoestoque/frontcontroller/cadastrarProduto" method="POST">
 		Nome Produto:<input name="nome">
-		Codigo Produto: <input name="cod_produto"> <input type="submit"
-			value="salvar">
+		Codigo Produto: <input name="cod_produto"> 
+		<input type="submit" value="salvar">
 	</form>
 </body>
 </html>

@@ -11,8 +11,7 @@ public class CadastrarProduto implements Tarefa {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// recuperar os parametros do formulario
-		Produto produto = new Produto(request.getParameter("id"), 
-				request.getParameter("nome"),
+		Produto produto = new Produto(request.getParameter("nome"),
 				request.getParameter("cod_produto"));
 		// enviar dados para o DAO persistir
 		new ProdutoDAO().salvar(produto);

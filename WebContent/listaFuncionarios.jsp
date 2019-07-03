@@ -13,12 +13,11 @@
 	<c:choose>
 		<c:when test="${usuario != NULL}">
 			<h1>Ol� ${usuario.nome}</h1>
-			<a href="logout">Logout</a>
+		<a href="logout">Logout</a>
 		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-		<a href="listarTodos">Listar todos</a>
 		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-			<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
-			<a href="listarProdutos">Listar Produtos</a>
+		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
+		<a href="listarProdutos">Listar Produtos</a>
 		</c:when>
 
 		<c:otherwise>
