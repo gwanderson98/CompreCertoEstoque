@@ -33,9 +33,9 @@
 	</c:choose>
 	<hr>
 	${msg}
-	<form action="/comprecertoestoque/frontcontroller/cadastrarProduto" method="POST">
-		Nome Produto:<input name="nome">
-		Codigo Produto: <input name="cod_produto"> 
+	<form action="/comprecertoestoque/frontcontroller/inserirEstoque" method="POST">
+		Quantidade Minima<input name="quantidadeMinima">
+		Quantidade para inserir<input name="quantidade">
 		<input type="submit" value="salvar">
 	</form>
 </body>

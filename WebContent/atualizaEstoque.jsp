@@ -33,10 +33,10 @@
 		</c:otherwise>
 	</c:choose>
 	<hr>
-	<form action="/comprecertoestoque/frontcontroller/atualizarProduto" method="POST">
-		Id :<input name="Id_produto" value="${entidade.getId_produto()}">
-		Nome:<input name="Nome" value="${entidade.getNome()}"> 
-		Codigo Produto: <input name="Cod_produto" value="${entidade.getCod_produto()}">		 
+	<form action="/comprecertoestoque/frontcontroller/atualizarEstoque" method="POST">
+		
+		Quantidade Minima:<input name="quantidadeMinima" value="${entidade.getQuantidadeMinima()}"> 
+		Quantidade: <input name="quantidade" value="${entidade.getQuantidade()}">		 
 		<input type="submit" value="Atualizar">
 	</form>
 </body>

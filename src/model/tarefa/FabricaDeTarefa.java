@@ -26,6 +26,12 @@ public class FabricaDeTarefa {
 		tarefas.put("GET/excluirFuncionario", new ExcluirFuncionario());
 		tarefas.put("GET/atualizarFuncionario", new AtualizarFuncionario());
 		tarefas.put("POST/atualizarFuncionario",new AtualizarFuncionario());
+		//estoque
+		tarefas.put("GET/exibeFormCadastroEstoque", new ExibeFormCadastroEstoque());
+		tarefas.put("POST/inserirEstoque", new InserirEstoque());
+		tarefas.put("GET/mostrarEstoque", new MostraEstoque());
+		tarefas.put("GET/atualizarEstoque", new AtualizaEstoque());
+		tarefas.put("POST/atualizarEstoque", new AtualizaEstoque());
 	}
 
 	public static Tarefa getTarefa(HttpServletRequest request) {

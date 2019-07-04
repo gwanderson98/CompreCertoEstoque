@@ -8,6 +8,8 @@
 		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
 		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
 		<a href="listarProdutos">Listar Produtos</a>
+		<a href="exibeFormCadastroEstoque">Inserir no Estoque</a>
+		<a href="mostrarEstoque">Mostrar Estoque</a>
 	</c:when>
 
 	<c:otherwise>
