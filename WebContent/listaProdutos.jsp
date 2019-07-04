@@ -40,10 +40,10 @@
 		<tbody>
 			<c:forEach var="p" items="${produtos}">
 				<tr>
-					<td>${p.Id_produto}</td>
-					<td>${p.Nome}</td>
-					<td>${p.Cod_produto}</td>
-					<td><a href="atualizarProduto?Id_produto=${pro.Id_produto}">Atualizar</a><a href="excluirProduto?Id_produto=${pro.Id_produto}">Excluir</a></td>
+					<td>${p.getId_produto()}</td>
+					<td>${p.getNome()}</td>
+					<td>${p.getCod_produto()}</td>
+					<td><a href="atualizarProduto?Id_produto=${p.getId_produto()}">Atualizar</a><a href="excluirProduto?Id_produto=${p.getId_produto()}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

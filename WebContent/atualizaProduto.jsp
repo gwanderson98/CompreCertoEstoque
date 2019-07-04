@@ -14,29 +14,28 @@
 		<c:when test="${usuario != NULL}">
 			<h1>Ol� ${usuario.nome}</h1>
 			<a href="logout">Logout</a>
-		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
-		<a href="listarProdutos">Listar Produtos</a>
+			<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
+			<a href="listarFuncionarioTodos">Listar Funcionarios </a>
+			<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
+			<a href="listarProdutos">Listar Produtos</a>
 		</c:when>
 
 		<c:otherwise>
 			<c:if test="${erro != NULL}">${erro}</c:if>
 
-			<form action="/comprecertoestoque/frontcontroller/login" method="post">
+			<form action="/comprecertoestoque/frontcontroller/login"
+				method="post">
 				Usuario:<input name="usuario"> Senha:<input name="senha">
 				<input type="submit" value="ok">
 			</form>
 		</c:otherwise>
 	</c:choose>
 	<hr>
-	<c:if test="${!empty produto }">
-		<form action="/comprecertoestoque/frontcontroller/atualizaProduto" method="POST">
-				Id :<input name="Id" value="${entidade.Id_produto}"> 
-				Nome:<input name="Nome" value="${entidade.Nome}">
-				Codigo Produto: <input name="Cod_produto" value="${entidade.Cod_produto}">
-			<input type="submit" value="Atualizar">
-		</form>
-	</c:if>
+	<form action="/comprecertoestoque/frontcontroller/atualizarProduto" method="POST">
+		Id :<input name="Id_produto" value="${entidade.getId_produto()}">
+		Nome:<input name="Nome" value="${entidade.getNome()}"> 
+		Codigo Produto: <input name="Cod_produto" value="${entidade.getCod_produto()}">		 
+		<input type="submit" value="Atualizar">
+	</form>
 </body>
 </html>

@@ -9,6 +9,7 @@ public class Produto {
 	
 	public Produto(int Id_produto,String Nome, String Cod_produto) {
 		super();
+		this.Id_produto = Id_produto;
 		this.Nome = Nome;
 		this.Cod_produto = Cod_produto;
 	}

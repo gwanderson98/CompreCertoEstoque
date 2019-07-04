@@ -21,7 +21,7 @@ public class ProdutoDAO implements DAO {
 		Produto produto= null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT Id_produto,Nome,cod_produto FROM Produto where Id_produto='" + (String) id + "'";
+			String sql = "SELECT Id_produto,Nome,cod_produto FROM Produto where Id_produto='" + id + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				produto = new Produto(rs.getInt("Id_produto"),rs.getString("Nome"),rs.getString("cod_produto"));
@@ -147,7 +147,7 @@ public class ProdutoDAO implements DAO {
 			String Cod_produto = ((Produto) entidade).getCod_produto();
 			int Id_produto = ((Produto) entidade).getId_produto();
 			stmt = con.createStatement();
-			String sql = "UPDATE Produto" + " SET Nome = '" + Nome + "'," + " Cod_produto ='" + Cod_produto + " WHERE Id_produto = " + Id_produto + ";";
+			String sql = "UPDATE Produto SET Nome ='" + Nome + "'," + " Cod_produto ='" + Cod_produto + "' WHERE Id_produto = " + Id_produto + ";";
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
 			se.printStackTrace();
