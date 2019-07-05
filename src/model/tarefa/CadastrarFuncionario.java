@@ -15,11 +15,11 @@ public class CadastrarFuncionario implements Tarefa {
 		// recuperar os parametros do formulario
 		
 		Funcionario funcionario = new Funcionario(request.getParameter("telefone"), 
-				request.getParameter("CPF"),
+				request.getParameter("cpf"),
 				request.getParameter("senha"),
 				request.getParameter("nomeFuncionario"),
 				request.getParameter("email")
-				//Cargo.values()[Integer.parseInt(request.getParameter("cargo"))]
+				request.getParameter("cargo");
 				);
 		// enviar dados para o DAO persistir
 		new FuncionarioDAO().salvar(funcionario);

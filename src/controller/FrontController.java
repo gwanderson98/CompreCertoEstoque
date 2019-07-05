@@ -20,7 +20,7 @@ public class FrontController extends HttpServlet {
 		try {
 			Tarefa tarefa = FabricaDeTarefa.getTarefa(request);
 			String view = tarefa.executa(request, response);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/" + view + ".jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/" + view + ".js");
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
 			throw new ServletException("Erro executando tarefa.", e);
