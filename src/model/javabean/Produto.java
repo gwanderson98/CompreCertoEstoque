@@ -3,9 +3,9 @@ package model.javabean;
 import java.util.Calendar;
 
 public class Produto {
-	private String Nome;
-	private String Cod_produto;
-	private int Id_produto;
+	private String nome;
+	private String codProduto;
+	private int idProduto;
 	
 	public Produto(int Id_produto,String Nome, String Cod_produto) {
 		super();

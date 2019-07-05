@@ -1,34 +1,55 @@
 package model.javabean;
 
 public class Funcionario {
+	private int id;
 	private String telefone;
-	private String CPF;
+	private String cpf;
 	private String senha;
 	private String nomeFuncionario;
 	private String email;
-	private Cargo cargo;
+	private int cargo;
 	
-	public Funcionario(String telefone, String CPF, String senha, String nomeFuncionario, String email) {
+	
+	public Funcionario(int id, String telefone, String cpf, String senha, String nomeFuncionario, String email,int cargo) {
 		super();
+		this.id = id;
 		this.telefone = telefone;
-		this.CPF = CPF;
+		this.cpf = cpf;
 		this.senha = senha;
 		this.nomeFuncionario = nomeFuncionario;
 		this.email = email;
-	//	this.cargo = cargo;
+		this.cargo = cargo;
+	}
+
+	public Funcionario(String telefone, String cpf, String senha, String nomeFuncionario, String email, int cargo) {
+		super();
+		this.telefone = telefone;
+		this.cpf = cpf;
+		this.senha = senha;
+		this.nomeFuncionario = nomeFuncionario;
+		this.email = email;
+		this.cargo = cargo;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getTelefone() {
 		return telefone;
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public String getCPF() {
-		return this.CPF;
+	public String getCpf() {
+		return this.cpf;
 	}
-	public void setCPF(String cPF) {
-		this.CPF = cPF;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getSenha() {
 		return senha;
@@ -48,11 +69,10 @@ public class Funcionario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Cargo getCargo() {
+	public int getCargo() {
 		return cargo;
 	}
-	public void setCargo(Cargo cargo) {
+	public void setCargo(int cargo) {
 		this.cargo = cargo;
-	}
-	
+	}	
 }

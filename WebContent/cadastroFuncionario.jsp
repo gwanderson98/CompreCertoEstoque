@@ -35,9 +35,9 @@
 	</c:choose>
 	<hr>
 	${msg}
-	<form action="cadastrarFuncionario" method="post">
+	<form action="/comprecertoestoque/frontcontroller/cadastrarFuncionario" method="post">
 		telefone:<input name="telefone"> 
-		CPF:<input name="CPF">
+		CPF:<input name="cpf">
 		senha: <input name="senha">
 		nomeFuncionario: <input name="nomeFuncionario">
 		email: <input name="email">
