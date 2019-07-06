@@ -42,12 +42,12 @@
 		<tbody>
 			<c:forEach var="e" items="${estoque}">
 				<tr>
-					<td>${e.getId_estoque()}</td>
+					<td>${e.getIdEstoque()}</td>
 					<td>${e.getQuantidade()}</td>
-					<td>${e.getId_produto()}</td>
+					<td>${e.getIdProduto()}</td>
 					<td>${e.getQuantidadeMinima()}</td>
 					
-					<td><a href="atualizarEstoque?Id_estoque=${e.getId_estoque()}">Atualizar</a><a href="excluirProduto?Id_produto=${p.getId_produto()}">Excluir</a></td>
+					<td><a href="atualizarEstoque?idEstoque=${e.getIdEstoque()}">Atualizar</a><a href="excluirEstoque?IdEstoque=${e.getIdEstoque()}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

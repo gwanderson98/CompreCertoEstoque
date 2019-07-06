@@ -1,16 +1,16 @@
 package model.javabean;
 
 public class Estoque {
-	private int Id_estoque;
+	private int idEstoque;
 	private int quantidade;
-	private int Id_produto;
+	private int idProduto;
 	private int quantidadeMinima;
 	
-	public Estoque(int Id_estoque, int quantidade, int Id_produto, int quantidadeMinima) {
+	public Estoque(int idEstoque, int quantidade, int idProduto, int quantidadeMinima) {
 		super();
-		this.Id_estoque = Id_estoque;
+		this.idEstoque = idEstoque;
 		this.quantidade = quantidade;
-		this.Id_produto = Id_produto;
+		this.idProduto = idProduto;
 		this.quantidadeMinima = quantidadeMinima;
 	}
 
@@ -20,20 +20,19 @@ public class Estoque {
 	}
 
 
-	public Estoque(int Id_estoque, int quantidadeMinima, int quantidade) {
-		this.Id_estoque = Id_estoque;
+	public Estoque(int idEstoque, int quantidadeMinima, int quantidade) {
+		this.idEstoque = idEstoque;
 		this.quantidadeMinima = quantidadeMinima;
 		this.quantidade = quantidade;
 	}
 
-	public int getId_estoque() {
-		return Id_estoque;
-	}	
-
-	public void setId_estoque(int id_estoque) {
-		Id_estoque = id_estoque;
+	public int getIdEstoque() {
+		return idEstoque;
 	}
 
+	public void setIdEstoque(int idEstoque) {
+		this.idEstoque = idEstoque;
+	}
 
 	public int getQuantidade() {
 		return quantidade;
@@ -41,11 +40,11 @@ public class Estoque {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	public int getId_produto() {
-		return Id_produto;
+	public int getIdProduto() {
+		return idProduto;
 	}
-	public void setId_Produto(int Id_produto) {
-		this.Id_produto = Id_produto;
+	public void setIdProduto(int idProduto) {
+		this.idProduto = idProduto;
 	}
 
 	public int getQuantidadeMinima() {
