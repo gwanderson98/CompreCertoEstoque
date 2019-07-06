@@ -34,7 +34,7 @@
 	</c:choose>
 	<hr>
 	<form action="/comprecertoestoque/frontcontroller/atualizarEstoque" method="POST">
-		
+		ID estoque <input name="idEstoque" value="${entidade.getId_estoque}">
 		Quantidade Minima:<input name="quantidadeMinima" value="${entidade.getQuantidadeMinima()}"> 
 		Quantidade: <input name="quantidade" value="${entidade.getQuantidade()}">		 
 		<input type="submit" value="Atualizar">

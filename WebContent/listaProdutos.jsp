@@ -42,10 +42,10 @@
 		<tbody>
 			<c:forEach var="p" items="${produtos}">
 				<tr>
-					<td>${p.getId_produto()}</td>
+					<td>${p.getIdProduto()}</td>
 					<td>${p.getNome()}</td>
-					<td>${p.getCod_produto()}</td>
-					<td><a href="atualizarProduto?Id_produto=${p.getId_produto()}">Atualizar</a><a href="excluirProduto?Id_produto=${p.getId_produto()}">Excluir</a></td>
+					<td>${p.getCodProduto()}</td>
+					<td><a href="atualizarProduto?Id_produto=${p.getIdProduto()}">Atualizar</a><a href="excluirProduto?Id_produto=${p.getIdProduto()}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

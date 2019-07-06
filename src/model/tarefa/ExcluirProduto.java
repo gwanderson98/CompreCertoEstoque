@@ -9,8 +9,8 @@ public class ExcluirProduto implements Tarefa {
 	
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String Id_produto = request.getParameter("Id_produto");
-		new ProdutoDAO().excluir(Id_produto);
+		String idProduto = request.getParameter("Id_produto");
+		new ProdutoDAO().excluir(idProduto);
 		return "listaProdutos";
 	}
 

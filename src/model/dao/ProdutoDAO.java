@@ -54,7 +54,7 @@ public class ProdutoDAO implements DAO {
 		Produto produto= null;
 		try {
 			stmt = con.createStatement();
-			String sql = "insert into Produto(Nome, Cod_produto) values ('"+ ((Produto) entidade).getNome() +"',"+"'" + ((Produto) entidade).getCod_produto() +"');";
+			String sql = "insert into Produto(Nome, Cod_produto) values ('"+ ((Produto) entidade).getNome() +"',"+"'" + ((Produto) entidade).getCodProduto() +"');";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
@@ -77,14 +77,14 @@ public class ProdutoDAO implements DAO {
 	}
 
 	@Override
-	public void excluir(Object Id_produto) {
+	public void excluir(Object idProduto) {
 		// conectar com sgbd
 		Connection con = FabricaDeConexoes.getConnection();
 		// montar a consulta
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "delete from Produto where Id_produto="+Id_produto+";";
+			String sql = "delete from Produto where Id_produto="+idProduto+";";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
@@ -143,11 +143,11 @@ public class ProdutoDAO implements DAO {
 		// montar a consulta
 		Statement stmt = null;
 		try {
-			String Nome = ((Produto) entidade).getNome();
-			String Cod_produto = ((Produto) entidade).getCod_produto();
-			int Id_produto = ((Produto) entidade).getId_produto();
+			String nome = ((Produto) entidade).getNome();
+			String codProduto = ((Produto) entidade).getCodProduto();
+			int idProduto = ((Produto) entidade).getIdProduto();
 			stmt = con.createStatement();
-			String sql = "UPDATE Produto SET Nome ='" + Nome + "'," + " Cod_produto ='" + Cod_produto + "' WHERE Id_produto = " + Id_produto + ";";
+			String sql = "UPDATE Produto SET Nome ='" + nome + "'," + " Cod_produto ='" + codProduto + "' WHERE Id_produto = " + idProduto + ";";
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
 			se.printStackTrace();

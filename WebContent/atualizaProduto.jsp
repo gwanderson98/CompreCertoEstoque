@@ -34,9 +34,9 @@
 	</c:choose>
 	<hr>
 	<form action="/comprecertoestoque/frontcontroller/atualizarProduto" method="POST">
-		Id :<input name="Id_produto" value="${entidade.getId_produto()}">
+		Id :<input name="Id_produto" value="${entidade.getIdProduto()}">
 		Nome:<input name="Nome" value="${entidade.getNome()}"> 
-		Codigo Produto: <input name="Cod_produto" value="${entidade.getCod_produto()}">		 
+		Codigo Produto: <input name="Cod_produto" value="${entidade.getCodProduto()}">		 
 		<input type="submit" value="Atualizar">
 	</form>
 </body>

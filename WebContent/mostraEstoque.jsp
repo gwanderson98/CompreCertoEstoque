@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,9 +43,10 @@
 			<c:forEach var="e" items="${estoque}">
 				<tr>
 					<td>${e.getId_estoque()}</td>
+					<td>${e.getQuantidade()}</td>
 					<td>${e.getId_produto()}</td>
 					<td>${e.getQuantidadeMinima()}</td>
-					<td>${e.getQuantidade()}</td>
+					
 					<td><a href="atualizarEstoque?Id_estoque=${e.getId_estoque()}">Atualizar</a><a href="excluirProduto?Id_produto=${p.getId_produto()}">Excluir</a></td>
 				</tr>
 			</c:forEach>
