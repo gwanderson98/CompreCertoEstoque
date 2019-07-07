@@ -116,9 +116,8 @@ public class FuncionarioDAO implements DAO {
 			String sql = "SELECT Id_func,Telefone,CPF,Senha,Nome_func,Email,Cargo FROM Funcionario;";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				funcionario.add(new Funcionario(rs.getInt("rs.getString(\"Telefone\")"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
+				funcionario.add(new Funcionario(rs.getInt("Id_func"),rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
 						rs.getString("Nome_func"), rs.getString("Email"),rs.getInt("Cargo")));
-				//Cargo.values()[rs.getInt("Cargo")];
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();

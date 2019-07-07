@@ -13,13 +13,12 @@ public class CadastrarFuncionario implements Tarefa {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// recuperar os parametros do formulario
-		
 		Funcionario funcionario = new Funcionario(request.getParameter("telefone"), 
 				request.getParameter("cpf"),
 				request.getParameter("senha"),
 				request.getParameter("nomeFuncionario"),
-				request.getParameter("email")
-				request.getParameter("cargo");
+				request.getParameter("email"),
+				Integer.parseInt(request.getParameter("cargo"))
 				);
 		// enviar dados para o DAO persistir
 		new FuncionarioDAO().salvar(funcionario);

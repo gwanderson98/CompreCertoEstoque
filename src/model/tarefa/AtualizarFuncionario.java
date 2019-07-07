@@ -22,7 +22,7 @@ public class AtualizarFuncionario implements Tarefa {
 			return retorno;
 		}
 		private String atualizaRegistro(HttpServletRequest request) {
-			Funcionario funcionario = new Funcionario(request.getParameter("telefone"), request.getParameter("CPF"), request.getParameter("senha"), request.getParameter("nomeFuncionario"), request.getParameter("email"));
+			Funcionario funcionario = new Funcionario(request.getParameter("telefone"),request.getParameter("cpf"),request.getParameter("senha"),request.getParameter("nomeFuncionario"),request.getParameter("email"),Integer.parseInt(request.getParameter("cargo")));
 			new FuncionarioDAO().atualizar(funcionario);
 			return "index";
 		}

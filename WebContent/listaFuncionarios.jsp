@@ -44,12 +44,12 @@
 		<tbody>
 			<c:forEach var="f" items="${funcionarios}">
 				<tr>
-					<td>${f.nomeFuncionario}</td>
-					<td>${f.email}</td>
-					<td>${f.senha}</td>
-					<td>${f.telefone}</td>
-					<td>${f.CPF}</td>
-					<td><a href="atualizarFuncionario?CPF=${f.CPF}">Atualizar</a><a href="excluirFuncionario?CPF=${f.CPF}">Excluir</a></td>
+					<td>${f.getNomeFuncionario()}</td>
+					<td>${f.getEmail()}</td>
+					<td>${f.getSenha()}</td>
+					<td>${f.getTelefone()}</td>
+					<td>${f.getCpf()}</td>
+					<td><a href="atualizarFuncionario?CPF=${f.getCpf()}">Atualizar</a><a href="excluirFuncionario?CPF=${f.getCpf()}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
