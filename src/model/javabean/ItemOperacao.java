@@ -1,36 +1,36 @@
 package model.javabean;
 
 public class ItemOperacao {
-	private int idItemOpereacao;
+	private int idItemOperacao;
 	private int idOperacaoFk;
 	private int idProdutoFk;
 	private int QuantidadeProduto;
 	
-	public ItemOperacao(int idItemOpereacao,int idOperacaoFk , int idProdutoFk,int quantidadeProduto) {
+	public ItemOperacao(int idItemOperecao,int idOperacaoFk , int idProdutoFk,int quantidadeProduto) {
 		super();
-		this.idItemOpereacao = idItemOpereacao;
+		this.idItemOperacao = idItemOperacao;
 		this.idOperacaoFk = idOperacaoFk;
 		this.idProdutoFk = idProdutoFk;
 		this.QuantidadeProduto = quantidadeProduto;
 	}
 	
-	public int getIdItemOpereacao() {
-		return idItemOpereacao;
+	public int getIdItemOperacao() {
+		return idItemOperacao;
 	}
-	public void setIdItemOpereacao(int idItemOpereacao) {
-		idItemOpereacao = idItemOpereacao;
+	public void setIdItemOperacao(int idItemOpereacao) {
+		this.idItemOperacao = idItemOperacao;
 	}
 	public int getIdOperacaoFk() {
 		return idOperacaoFk;
 	}
 	public void setIdOperacaoFk(int idOperacaoFk) {
-		idOperacaoFk = idOperacaoFk;
+		this.idOperacaoFk = idOperacaoFk;
 	}
 	public int getIdProdutoFk() {
 		return idProdutoFk;
 	}
 	public void setIdProdutoFk(int idProdutoFk) {
-		idProdutoFk = idProdutoFk;
+		this.idProdutoFk = idProdutoFk;
 	}
 	public int getQuantidadeProduto() {
 		return QuantidadeProduto;

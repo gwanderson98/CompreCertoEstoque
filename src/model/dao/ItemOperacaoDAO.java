@@ -10,23 +10,26 @@ import java.util.List;
 import model.javabean.Cargo;
 import model.javabean.Funcionario;
 import model.javabean.ItemOperacao;
-import model.javabean.Operacao;
+import model.javabean.Operacao; 
 
-public class OperacaoDAO implements DAO {
+public class ItemOperacaoDAO implements DAO {
+
+public List<ItemOperacao> listaItem = new ArrayList<ItemOperacao>();
 	
 	@Override
 	public Object recuperarPorId(Object id) {
 		Connection con = FabricaDeConexoes.getConnection();
 		Statement stmt = null;
-		Operacao operacao = null;
+		ItemOperacao item = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM operacao where Id_operacao='" + (String) id + "'";
+			String sql = "SELECT * FROM itemoperacao where Id_operacao='" + (String) id + "'";
 			ResultSet rs = stmt.executeQuery(sql);
-			if (rs.next()) {
-				operacao = new Operacao(rs.getInt("Id_operacao"),(char)rs.getInt("Tipo_operacao"),
-						rs.getString("Data_operacao"),rs.getInt("Id_func_fk"));
+			if (rs.next()) {				
+				item = new ItemOperacao(rs.getInt("Id_item_opereacao"),rs.getInt("Id_operacao_fk"),
+						rs.getInt("Id_produto_fk"),rs.getInt("quantidadeProduto"));
 			}
+
 		} catch (SQLException se) {
 			se.printStackTrace();
 		} catch (Exception e) {
@@ -43,7 +46,7 @@ public class OperacaoDAO implements DAO {
 				se2.printStackTrace();
 			}
 		}
-		return operacao;
+		return item;
 	}
 
 	@Override
@@ -55,9 +58,9 @@ public class OperacaoDAO implements DAO {
 		Operacao operacao = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "insert into operacao(Tipo_operacao,Data_produto_fk,Id_funk_fk) values('" 
-			+ ((Operacao) entidade).getTipo() + "','"+ ((Operacao) entidade).getData() + "','"+ 
-					((Operacao) entidade).getId_func_fk()+ "');";
+			String sql = "insert into item_operacao(Id_operacao_fk,Id_produto_fk,Quantidade_produto) values('" + 
+					((ItemOperacao) entidade).getIdItemOperacao() + "','"+ ((ItemOperacao) entidade).getIdOperacaoFk() +"','"
+					+ ((ItemOperacao) entidade).getIdProdutoFk()+"','"+ ((ItemOperacao) entidade).getQuantidadeProduto()+ "');";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
@@ -87,11 +90,9 @@ public class OperacaoDAO implements DAO {
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "delete from Operacao where Id_operacao="+id;
-			String sql2 = "delte from ItemOperacao where Id_operacao_fk";
+			String sql = "delte from ItemOperacao where Id_operacao_fk = " + id +";";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
-			stmt.executeUpdate(sql2);
 		} catch (SQLException se) {
 			se.printStackTrace();
 		} catch (Exception e) {
@@ -114,11 +115,15 @@ public class OperacaoDAO implements DAO {
 	public List listarTodos() {
 		Connection con = FabricaDeConexoes.getConnection();
 		Statement stmt = null;
-		List<Operacao> operacao = new ArrayList<Operacao>();
+		List<ItemOperacao> operacao = new ArrayList<ItemOperacao>();
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT Id_operacao,Tipo_operacao,Data_produto_fk,Id_funk_fk Cargo FROM Operacao;";
+			String sql = "SELECT Id_item_operacao,Id_operacao_fk,Id_produto_fk,Quantidade_produto FROM item_operacao;";
 			ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				operacao.add(new ItemOperacao(rs.getInt("Id_item_operacao"),(char)rs.getInt("Id_operacao_fk"), 
+						rs.getInt("Id_produto_fk"), rs.getInt("Quantidade_produto")));
+			}
 		} catch (SQLException se) {
 			se.printStackTrace();
 		} catch (Exception e) {
@@ -145,13 +150,12 @@ public class OperacaoDAO implements DAO {
 		// montar a consulta
 		Statement stmt = null;
 		try {
-			int Id_operacao = ((Operacao) entidade).getId_operacao();
-			char Tipo_operacao = ((Operacao) entidade).getTipo();
-			String Data_operacao = ((Operacao) entidade).getData();
-			int Id_func_fk = ((Operacao) entidade).getId_func_fk();
+			int IdItemOperacao = ((ItemOperacao) entidade).getIdItemOperacao();
+			int IdOperacaoFk = ((ItemOperacao) entidade).getIdOperacaoFk();
+			int IdProdutoFk = ((ItemOperacao) entidade).getIdProdutoFk();
+			int QuantidadeProduto = ((ItemOperacao) entidade).getQuantidadeProduto();
 			stmt = con.createStatement();
-			String sql = "UPDATE Operacao" + " SET Tipo_operacao = " + Tipo_operacao + "," + " Data_operacao = '"
-					+ Data_operacao + ","+ "Id_func_fk = " + Id_func_fk +" WHERE id = " + Id_operacao;
+			String sql = "UPDATE item_operacao SET Quantidade_produto = " + QuantidadeProduto +" WHERE id = " + IdItemOperacao;
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -171,5 +175,6 @@ public class OperacaoDAO implements DAO {
 		}
 		
 	}
-
 }
+
+

@@ -8,29 +8,13 @@
 <title>Arquitetura de referência</title>
 </head>
 <body>
-	<h1>Arquitetura de referência</h1>
+	<h1>Compre Certo</h1>
 	<hr>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
-			<h1>Olá ${usuario.nome}</h1>
-		<a href="logout">Logout</a>
-		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
-		<a href="listarProdutos">Listar Produtos</a>
-		<a href="exibeFormCadastroEstoque">Inserir no Estoque</a>
-		<a href="mostrarEstoque">Mostrar Estoque</a>
-		</c:when>
-
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="/comprecertoestoque/frontcontroller/login" method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
+	<form action="/comprecertoestoque/frontcontroller/login" method="post">
+		Email:<input name="email"> <br>
+		Senha:<input name="senha">
+		<input type="submit" value="ok">
+	</form>
 </body>
 </html>
 
