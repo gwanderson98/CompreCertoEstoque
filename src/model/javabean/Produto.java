@@ -25,7 +25,7 @@ public class Produto {
 	}
 
 	public void setIdProduto(int idProduto) {
-		idProduto = idProduto;
+		this.idProduto = idProduto;
 	}
 
 	public String getNome() {
