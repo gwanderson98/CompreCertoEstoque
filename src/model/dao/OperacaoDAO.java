@@ -69,8 +69,8 @@ public class OperacaoDAO implements DAO {
 			stmt = con.createStatement();
 			String sql = "insert into operacao(Tipo_operacao,Data_produto_fk,Id_funk_fk) values('" + ((Operacao) entidade).getTipo() + "','"+ ((Operacao) entidade).getData() + "','"+ ((Operacao) entidade).getId_func_fk()+ "');";
 			for (ItemOperacao itemOperacao : listaItem) {
-				String sql2 = "insert into item_operacao(Id_operacao_fk,Id_produto_fk,Quantidade_produto) values('" + ((ItemOperacao) entidade).getId_item_opereacao() + "','"+ ((ItemOperacao) entidade).getId_operacao_fk() +"','"
-				+ ((ItemOperacao) entidade).getId_produto_fk()+"','"+ ((ItemOperacao) entidade).getQuantidadeProduto()+ "');";
+				String sql2 = "insert into item_operacao(Id_operacao_fk,Id_produto_fk,Quantidade_produto) values('" + ((ItemOperacao) entidade).getIdItemOpereacao() + "','"+ ((ItemOperacao) entidade).getIdOperacaoFk() +"','"
+				+ ((ItemOperacao) entidade).getIdProdutoFk()+"','"+ ((ItemOperacao) entidade).getQuantidadeProduto()+ "');";
 				System.out.println(sql2);
 				stmt.executeUpdate(sql2);
 			}

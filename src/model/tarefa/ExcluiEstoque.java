@@ -3,15 +3,16 @@ package model.tarefa;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.ProdutoDAO;
+import model.dao.EstoqueDAO;
 
-public class ExcluirProduto implements Tarefa {
-	
+public class ExcluiEstoque implements Tarefa {
+
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String idProduto = request.getParameter("Id_produto");
-		new ProdutoDAO().excluir(idProduto);
-		return "listaProdutos";
+		String idEstoque = request.getParameter("IdEstoque");
+		new EstoqueDAO().excluir(idEstoque);
+		return "mostraEstoque";
+		
 	}
 
 }
