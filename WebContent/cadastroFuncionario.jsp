@@ -11,8 +11,6 @@
 <title>Cadastro de Funcionario</title>
 </head>
 <body>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
       <div class="pt16 fixed bg-white w-100 top-0 header-nav">
         <div class="flex justify-between diagram-project">
           <div class="flex items-center justify-center pointer pb16 menu-dpw">
@@ -42,19 +40,6 @@
           </div>
         </div>
       </div>
-		</c:when>
-
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="login" method="post">
-				Usuario:<input name="usuario"> 
-				Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
-	${msg}
 	<div class="diagram-project pt72">
 		<h1 class="pt32 blue-title f36">Cadastro de Funcionários</h1>
 	</div>

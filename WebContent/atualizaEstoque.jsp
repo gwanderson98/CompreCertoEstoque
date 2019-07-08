@@ -11,8 +11,6 @@
 <title>Atualizar Estoque - Compre Certo Estoque</title>
 </head>
 <body>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
       <div class="pt16 fixed bg-white w-100 top-0 header-nav">
         <div class="flex justify-between diagram-project">
           <div class="flex items-center justify-center pointer pb16 menu-dpw">
@@ -42,26 +40,18 @@
           </div>
         </div>
       </div>
-		</c:when>
-
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="/comprecertoestoque/frontcontroller/login"
-				method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
 	<div class="diagram-project pt72">
-		<h1 class="pt32 blue-title f36">Atualizar Estoque</h1>
+		<h1 class="pt32 blue-title f36">Atualizar Estoque</h1>nomeProduto
 	</div>
 	<div class="w-100 flex justify-center">
 		<form action="/comprecertoestoque/frontcontroller/atualizarEstoque" method="POST" class="w-34">
 			<div class="flex w-100 flex-column pb16">
 				<label for="id_estoque" class="mine-shaft f14 pb4">Id Estoque</label>
 				<input name="idEstoque" id="id_estoque" class="pa16 bl br bt bb b--light-silver br3" value="${estoque.getIdEstoque()}">
+			</div>
+			<div class="flex w-100 flex-column pb16">
+				<label for="id_estoque" class="mine-shaft f14 pb4">Nome Produto</label>
+				<input name="nomeProduto" id="nomeProduto" class="pa16 bl br bt bb b--light-silver br3" value="${estoque.getNomeProduto()}">
 			</div>
 			<div class="flex w-100 flex-column pb16">
 				<label for="qnt" class="mine-shaft f14 pb4">Quantidade</label>

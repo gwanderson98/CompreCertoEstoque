@@ -184,7 +184,7 @@ public class FuncionarioDAO implements DAO {
 		Funcionario funcionario = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT Id_func,Telefone,CPF,Senha, Nome_func, Email, Cargo FROM Funcionario where Nome_func ='" + nomeFuncionario + "' and Senha='" + senha + "'";
+			String sql = "SELECT Id_func,Telefone,CPF,Senha, Nome_func, Email, Cargo FROM Funcionario where Email ='" + nomeFuncionario + "' and Senha='" + senha + "';";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				
@@ -215,5 +215,33 @@ public class FuncionarioDAO implements DAO {
 		}
 		return funcionario;
 	}
+	public void trocaSenha(String email, String senha) {
+		Connection con = FabricaDeConexoes.getConnection();
+		Statement stmt = null;
+		Funcionario funcionario = null;
+		try {
+			stmt = con.createStatement();
+			String sql = "update Funcionario set Senha ='"+senha+"' where Email ='"+email+"';";
+			stmt.executeUpdate(sql);
+			
+		} catch (SQLException se) {
+			se.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null) {
+					stmt.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (SQLException se2) {
+				se2.printStackTrace();
+			}
+		}
+		
+	}
+
 
 }

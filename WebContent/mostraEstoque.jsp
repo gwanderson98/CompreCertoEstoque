@@ -11,8 +11,6 @@
 <title>Estoque - Compre Certo Estoque</title>
 </head>
 <body>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
       <div class="pt16 fixed bg-white w-100 top-0 header-nav">
         <div class="flex justify-between diagram-project">
           <div class="flex items-center justify-center pointer pb16 menu-dpw">
@@ -42,17 +40,6 @@
           </div>
         </div>
       </div>
-		</c:when>
-
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="/comprecertoestoque/frontcontroller/login" method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
 	<div class="diagram-project pt72 flex items-center justify-between">
 		<h1 class="pt32 blue-title f36">Estoque</h1>
 		<a href="exibeFormCadastroEstoque" class="pt32 no-underline blue-title"><span class="f18 b blue-title">+   </span>Cadastrar Estoque</a>
@@ -65,8 +52,8 @@
             <div class="f16 mine-shaft truncate">${e.getIdEstoque()}</div>
           </div>
           <div class="w-17-5 pl16 pb7 pt7" style="width: 17.5%">
-            <div class="f10 light-silver">Id Produto</div>
-            <div class="f16 mine-shaft truncate">${e.getIdProduto()}</div>
+            <div class="f10 light-silver">Nome Produto</div>
+            <div class="f16 mine-shaft truncate">${e.getNomeProduto()}</div>
           </div>
           <div class="w-25 pr16 pl16 bl b--light-silver pb7 pt7">
             <div class="f10 light-silver">Quantidade no estoque</div>

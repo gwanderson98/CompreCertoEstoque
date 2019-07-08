@@ -18,12 +18,11 @@ public class EstoqueDAO implements DAO {
 		Estoque estoque = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "select Id_estoque, Quantidade_minima, Quantidade_produto from Estoque where Id_estoque =" + id
-					+ ";";
+			String sql = "select Id_estoque, Nome_produto, Quantidade_minima, Quantidade_produto from Estoque where Id_estoque =" + id+ ";";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				estoque = new Estoque(rs.getInt("Id_estoque"), rs.getInt("Quantidade_minima"),
-						rs.getInt("Quantidade_produto"));
+						rs.getInt("Quantidade_produto"),rs.getString("Nome_produto"));
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -53,8 +52,7 @@ public class EstoqueDAO implements DAO {
 		Estoque estoque = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "insert into Estoque( Quantidade_minima, Quantidade_produto) values ("
-					+ ((Estoque) entidade).getQuantidadeMinima() + ", " + ((Estoque) entidade).getQuantidade() + ");";
+			String sql = "INSERT INTO Estoque(Nome_produto, Quantidade_minima, Quantidade_produto) values('" +((Estoque) entidade).getNomeProduto()+"',"+ ((Estoque) entidade).getQuantidadeMinima() + ","+ ((Estoque) entidade).getQuantidade() + ");";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
@@ -112,11 +110,11 @@ public class EstoqueDAO implements DAO {
 		List<Estoque> estoque = new ArrayList<Estoque>();
 		try {
 			stmt = con.createStatement();
-			String sql = "select Id_estoque, Id_produto_fk, Quantidade_minima, Quantidade_produto from Estoque;";
+			String sql = "select Id_estoque, Nome_produto, Quantidade_minima, Quantidade_produto from Estoque;";
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				estoque.add(new Estoque(rs.getInt("Id_estoque"), rs.getInt("Id_produto_fk"),
-						rs.getInt("Quantidade_minima"), rs.getInt("Quantidade_produto")));
+				estoque.add(new Estoque(rs.getInt("Id_estoque"),
+						rs.getInt("Quantidade_minima"), rs.getInt("Quantidade_produto"), rs.getString("Nome_produto")));
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();

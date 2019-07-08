@@ -11,8 +11,6 @@
 <title>Cadastro de Produto em Estoque - Compre Certo Estoque</title>
 </head>
 <body>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
       <div class="pt16 fixed bg-white w-100 top-0 header-nav">
         <div class="flex justify-between diagram-project">
           <div class="flex items-center justify-center pointer pb16 menu-dpw">
@@ -42,23 +40,16 @@
           </div>
         </div>
       </div>
-		</c:when>
-
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="login" method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
 	<div class="diagram-project pt72">
 		<h1 class="pt32 blue-title f36">Cadastar Estoque</h1>
 	</div>
 	${msg}
 	<div class="flex justify-center w-100">
 		<form action="/comprecertoestoque/frontcontroller/inserirEstoque" method="POST" class="w-34">
+		<div class="flex w-100 flex-column pb16">
+				<label for="qnt" class="mine-shaft f14 pb4">Nome Produto</label>
+				<input name="nomeProduto" id="qnt" class="pa16 bl br bt bb b--light-silver br3" placeholder="Quantidade do produto">
+			</div>
 			<div class="flex w-100 flex-column pb16">
 				<label for="qnt" class="mine-shaft f14 pb4">Quantidade</label>
 				<input name="quantidade" id="qnt" class="pa16 bl br bt bb b--light-silver br3" placeholder="Quantidade do produto">

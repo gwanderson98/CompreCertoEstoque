@@ -26,6 +26,7 @@ CREATE TABLE Produto (
     Nome VARCHAR(55) NOT NULL UNIQUE,
     Cod_produto VARCHAR(100) 
 );
+select * from Produto;
 
 CREATE TABLE Operacao(
 	Id_operacao INT(50) PRIMARY KEY AUTO_INCREMENT,
@@ -49,6 +50,7 @@ Create  table Item_Operacao(
 CREATE TABLE Estoque(
 	Id_estoque INT PRIMARY KEY AUTO_INCREMENT,
 	Id_produto_fk Int,
+    Nome_produto varchar(55),
     Quantidade_minima INT,
     Quantidade_produto INT,
     FOREIGN KEY (Id_produto_fk) REFERENCES Produto(Id_produto)
@@ -66,11 +68,11 @@ VALUES	('Vitamina C','12345678654'),
 		('Vitamina E','987654312123'),
         ('Omega 3', '963852741123');
 
-INSERT INTO Estoque(Id_produto_fk, Quantidade_minima, Quantidade_produto) 
-values (1,5,10),
-	   (2,6,12),
-       (3,7,14),
-       (4,8,16);
+INSERT INTO Estoque(Id_produto_fk, NomeProduto, Quantidade_minima, Quantidade_produto) 
+values (1,"Anador",5,10),
+	   (2,"Doril",6,12),
+       (3,"Dorflex",7,14),
+       (4,"Benegripe",8,16);
         
 INSERT INTO Operacao(Tipo_operacao,Data_operacao,Id_func_fk)
 VALUES	('E','2019-06-14',1),

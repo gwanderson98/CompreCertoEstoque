@@ -3,6 +3,7 @@ package model.javabean;
 public class Estoque {
 	private int idEstoque;
 	private int quantidade;
+	private String nomeProduto;
 	private int idProduto;
 	private int quantidadeMinima;
 	
@@ -20,10 +21,25 @@ public class Estoque {
 	}
 
 
-	public Estoque(int idEstoque, int quantidadeMinima, int quantidade) {
+	public Estoque(int idEstoque, int quantidadeMinima, int quantidade, String nomeProduto) {
 		this.idEstoque = idEstoque;
 		this.quantidadeMinima = quantidadeMinima;
 		this.quantidade = quantidade;
+		this.nomeProduto = nomeProduto;
+	}
+
+	public Estoque(int quantidadeMinima, int quantidade, String nomeProduto) {
+		this.quantidadeMinima = quantidadeMinima;
+		this.quantidade = quantidade;
+		this.nomeProduto = nomeProduto;
+	}
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 	public int getIdEstoque() {

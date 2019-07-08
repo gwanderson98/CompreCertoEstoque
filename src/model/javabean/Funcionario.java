@@ -18,6 +18,11 @@ public class Funcionario {
 	//	this.cargo = cargo;
 	}
 	
+	public Funcionario(String email, String senha) {
+		this.senha = senha;
+		this.email = email;
+	}
+
 	public String getTelefone() {
 		return telefone;
 	}

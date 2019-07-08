@@ -12,8 +12,6 @@
 </head>
 
 <body>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
       <div class="pt16 fixed bg-white w-100 top-0 header-nav">
         <div class="flex justify-between diagram-project">
           <div class="flex items-center justify-center pointer pb16 menu-dpw">
@@ -43,17 +41,6 @@
           </div>
         </div>
       </div>
-		</c:when>
-
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="/comprecertoestoque/frontcontroller/login" method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
 	<div class="pt72">
 	<div class="diagram-project flex justify-between items-center">
 		<h1 class="pt42 blue-title f36">Lista de produtos</h1>
