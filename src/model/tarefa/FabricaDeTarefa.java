@@ -27,7 +27,8 @@ public class FabricaDeTarefa {
 		tarefas.put("GET/atualizarFuncionario", new AtualizarFuncionario());
 		tarefas.put("POST/atualizarFuncionario",new AtualizarFuncionario());
 		tarefas.put("GET/exibeInformacoesFuncionario", new ExibeInformacoesFuncionario());
-		
+		tarefas.put("GET/esqueciSenha", new AtualizaSenha());
+		tarefas.put("POST/atualizarSenha", new AtualizaSenha());
 		//estoque
 		tarefas.put("GET/exibeFormCadastroEstoque", new ExibeFormCadastroEstoque());
 		tarefas.put("POST/inserirEstoque", new InserirEstoque());

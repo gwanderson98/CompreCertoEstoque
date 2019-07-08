@@ -31,6 +31,15 @@ public class Funcionario {
 		this.cargo = cargo;
 	}
 	
+	public Funcionario(String email, String senha) {
+		this.email = email;
+		this.senha = senha;
+	}
+
+	public Funcionario(String senha) {
+		this.senha = senha;
+	}
+
 	public int getId() {
 		return id;
 	}
