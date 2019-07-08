@@ -53,8 +53,9 @@
 			</form>
 		</c:otherwise>
 	</c:choose>
-	<div class="diagram-project pt32">
+	<div class="diagram-project pt32 flex justify-between items-center">
 		<h1 class="pt72 blue-title f36">Lista de Funcionários</h1>
+		<a href="exibeFormCadastroFuncionario" class="pt72 no-underline blue-title"><span class="f18 b blue-title">+   </span>Cadastrar Funcionário</a>
 	</div>
 <c:forEach var="f" items="${funcionarios}">
 	<div class="diagram-project pb16">

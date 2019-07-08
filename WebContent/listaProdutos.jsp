@@ -55,8 +55,9 @@
 		</c:otherwise>
 	</c:choose>
 	<div class="pt72">
-	<div class="diagram-project">
+	<div class="diagram-project flex justify-between items-center">
 		<h1 class="pt42 blue-title f36">Lista de produtos</h1>
+		<a href="exibeFormCadastroProduto" class="pt42 no-underline blue-title"><span class="f18 b blue-title">+   </span>Cadastrar Produto</a>
 	</div>
 	<c:forEach var="p" items="${produtos}">
 	        <div class="diagram-project pb16">

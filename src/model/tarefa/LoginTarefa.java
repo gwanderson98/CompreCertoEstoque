@@ -18,7 +18,7 @@ public class LoginTarefa implements Tarefa {
 			request.getSession().setAttribute("usuario", usuario);
 			return "index";
 		} else {
-			request.setAttribute("erro", "Nome de usuário/senha errado. Tente novamente.");
+			request.setAttribute("erro", "Nome de usuï¿½rio/senha errado. Tente novamente.");
 			return "index";
 		}
 	}

@@ -13,10 +13,9 @@
 </head>
 
 <body>
-	<h1>Home</h1>
-	<hr>
+
 	<c:choose>
-		<c:when test="${usuario != NULL}">
+<c:when test="${usuario != NULL}">
       <div class="pt16 fixed bg-white w-100 top-0 header-nav">
         <div class="flex justify-between diagram-project">
           <div class="flex items-center justify-center pointer pb16 menu-dpw">
@@ -46,15 +45,44 @@
           </div>
         </div>
       </div>
+      <div class="pt72 diagram-project">
+      	<h1 class="pt42 blue-title f36">Home</h1>
+      </div>
+      <div class="pt32 diagram-project">
+      	<div class="flex justify-between w-100 pb32">
+	      	<a href="listarProdutos" value="Produtos" class="no-underline db input-reset w-40 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">Produtos</a>
+	      	<a href="exibeFormCadastroProduto" value="Cadastrar produto" class="no-underline db input-reset w-40 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">Cadastrar produto</a>
+      	</div>
+      	<div class="flex justify-between w-100 pb32">
+	      	<a href="listarFuncionarioTodos" value="Funcionários" class="no-underline db input-reset w-40 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">Funcionários</a>
+	      	<a href="exibeFormCadastroFuncionario" value="Cadastrar Funcionário" class="no-underline db input-reset w-40 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">Cadastrar Funcionário</a>
+      	</div>
+      	<div class="flex justify-between w-100 pb32">
+	      	<a href="mostrarEstoque" value="Estoque" class="no-underline db input-reset w-40 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">Estoque</a>
+	      	<a href="exibeFormCadastroEstoque" value="Cadastrar no Estoque" class="no-underline db input-reset w-40 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">Cadastrar no Estoque</a>
+      	</div>
+      </div>
 		</c:when>
 
 		<c:otherwise>
 			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="/comprecertoestoque/frontcontroller/login" method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
+			<div class="flex justify-center w-100 vh-100">
+				<form action="/comprecertoestoque/frontcontroller/login" method="post" class="w-34 flex flex-column items-center justify-center ">
+					<img src="../images/logo.svg" alt="Compre Certo Estoque" class="pb72"/>
+					<div class="flex w-100 flex-column pb16">
+						<label class="mine-shaft f14 pb4" for="user-login">Usuário</label>
+						<input name="usuario" id="user-login" class="pa16 bl br bt bb b--light-silver br3" placeholder="Email">
+					</div>
+					<div class="flex w-100 flex-column pb16 pt32">
+						<label class="mine-shaft f14 pb4" for="user-senha">Senha:</label>
+						<input type="password" name="senha" id="user-senha" class="pa16 bl br bt bb b--light-silver br3" placeholder="Senha" >
+					</div>
+					<div class="flex justify-between items-center pt32 w-100">
+						<a href="" class="link light-silver b">Esqueci minha senha</a>
+						<input type="submit" value="Logar" class="input-reset w-60 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">
+					</div>
+				</form>
+			</div>
 		</c:otherwise>
 	</c:choose>
 </body>
