@@ -211,4 +211,33 @@ public class FuncionarioDAO implements DAO {
 		return funcionario;
 	}
 
+	public void trocaSenha(String email, String senha) {
+		Connection con = FabricaDeConexoes.getConnection();
+		Statement stmt = null;
+		Funcionario funcionario = null;
+		try {
+			stmt = con.createStatement();
+			String sql = "update Funcionario set Senha ='"+senha+"' where Email ='"+email+"';";
+			stmt.executeUpdate(sql);
+			
+		} catch (SQLException se) {
+			se.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null) {
+					stmt.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (SQLException se2) {
+				se2.printStackTrace();
+			}
+		}
+		
+	}
+
+
 }

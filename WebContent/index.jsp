@@ -15,6 +15,9 @@
 		Senha:<input name="senha">
 		<input type="submit" value="ok">
 	</form>
+	<form action="/comprecertoestoque/frontcontroller/esqueciSenha" method="get">
+		<input type="submit" value="Esqueci senha">
+	</form>
 </body>
 </html>
 
