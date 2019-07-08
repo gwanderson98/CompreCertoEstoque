@@ -10,27 +10,10 @@
 <body>
 	<h1>Arquitetura de referï¿½ncia</h1>
 	<hr>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
-			<h1>Olï¿½ ${usuario.nome}</h1>
-		<a href="logout">Logout</a>
-		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
-		<a href="listarProdutos">Listar Produtos</a>
-		<a href="exibeFormCadastroEstoque">Inserir no Estoque</a>
-		<a href="mostrarEstoque">Mostrar Estoque</a>
-		</c:when>
+	
+	<a href="/comprecertoestoque/frontcontroller/login">HOME</a>
+	<a href="/comprecertoestoque/frontcontroller/exibeFormCadastroFuncionario">Cadastrar Parceiro</a>
 
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="/comprecertoestoque/frontcontroller/login" method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
 	<hr>
 	<table border=1>
 		<thead>
@@ -39,6 +22,7 @@
 			<th>Senha</th>
 			<th>Telefone</th>
 			<th>CPF</th>
+			<th>Cargo</th>
 			<th>Ações</th>
 		</thead>
 		<tbody>
@@ -49,6 +33,7 @@
 					<td>${f.getSenha()}</td>
 					<td>${f.getTelefone()}</td>
 					<td>${f.getCpf()}</td>
+					<td>${f.getCargo()}</td>	
 					<td><a href="atualizarFuncionario?CPF=${f.getCpf()}">Atualizar</a><a href="excluirFuncionario?CPF=${f.getCpf()}">Excluir</a></td>
 				</tr>
 			</c:forEach>

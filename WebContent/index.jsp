@@ -19,6 +19,9 @@
 				<li>
 					<a href="/comprecertoestoque/frontcontroller/produtosLoja">Produtos</a>
 				</li>
+				<li>
+					<a href="/comprecertoestoque/frontcontroller/parcerio">Parcerio</a>
+				</li>
 			</ul>
 		</div>
 		<div style="float: none;text-align: center;">
@@ -42,13 +45,14 @@
 			<h1>Compre Certo</h1>
 			<hr>
 			<form action="/comprecertoestoque/frontcontroller/login" method="post">
-				Senha:<input name="senha"> <br>
 				Email:<input name="email"> <br>
+				Senha:<input name="senha"> <br>
 				<c:if test="${erro != NULL}">${erro}</c:if>
+				<input type="submit" value="entrar">
 			</form>
-	<form action="/comprecertoestoque/frontcontroller/esqueciSenha" method="get">
-		<input type="submit" value="Esqueci senha">
-	</form>
+			<form action="/comprecertoestoque/frontcontroller/esqueciSenha" method="get">
+				<input type="submit" value="Esqueci senha">
+			</form>
 		</c:otherwise>
 	</c:choose>
 </body>

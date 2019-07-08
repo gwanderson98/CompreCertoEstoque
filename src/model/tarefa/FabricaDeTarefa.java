@@ -20,7 +20,7 @@ public class FabricaDeTarefa {
 		tarefas.put("POST/atualizarProduto", new AtualizarProduto());
 		tarefas.put("GET/excluirProduto", new ExcluirProduto());
 		//funcionario
-		tarefas.put("GET/listarFuncionarioTodos", new ListarTodosFuncionarios());
+		tarefas.put("GET/parcerio", new ListarTodosFuncionarios());
 		tarefas.put("POST/cadastrarFuncionario", new CadastrarFuncionario());
 		tarefas.put("GET/exibeFormCadastroFuncionario", new ExibeFormCadastroFuncionario());
 		tarefas.put("GET/excluirFuncionario", new ExcluirFuncionario());

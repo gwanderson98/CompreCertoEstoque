@@ -85,7 +85,7 @@ public class FuncionarioDAO implements DAO {
 		Statement stmt = null;
 		try {
 			stmt = con.createStatement();
-			String excluirId_func = "delete from Funcionario where Id_func='" + id+"';";
+			String excluirId_func = "delete from Funcionario where CPF='" + id+"';";
 			System.out.println(excluirId_func);
 			stmt.executeUpdate(excluirId_func);
 		} catch (SQLException se) {
