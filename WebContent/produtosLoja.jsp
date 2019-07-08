@@ -14,9 +14,10 @@
 	<h1>Lista Produto</h1>
 	<hr>
 	
-	<a href="/comprecertoestoque/frontcontroller/cadastrarProduto">Cadastrar Produto</a>
+	<a href="/comprecertoestoque/frontcontroller/exibeFormCadastroProduto">Cadastrar Produto</a>
 	<table border=1>
 		<thead>
+			<th>Id Produto</th>
 			<th>Produto</th>
 			<th>Quantidade em estoque</th>
 			<th>Quantidade Minima</th>
@@ -25,10 +26,14 @@
 		<tbody>
 			<c:forEach var="j" items="${juncao}">
 				<tr>
+					<td>${j.getIdProduto()}</td>
 					<td>${j.getNome()}</td>
 					<td>${j.getQuantidade()}</td>
-					<td>${j.getQuantidade()}</td>
-					<td><a href="atualizarEstoque?idEstoque=${j.getIdEstoque()}">Atualizar</a><a href="excluirEstoque?IdEstoque=${j.getIdEstoque()}">Excluir</a></td>
+					<td>${j.getQuantidadeMinima()}</td>
+					<td>
+						<a href="atualizarLoja?IdProduto=${j.getIdProduto()}&IdEstoque=${j.getIdEstoque()}">Atualizar</a>
+						<a href="excluirLoja?IdProduto=${j.getIdProduto()}&IdEstoque=${j.getIdEstoque()}">Excluir</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

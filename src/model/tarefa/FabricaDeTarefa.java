@@ -36,6 +36,11 @@ public class FabricaDeTarefa {
 		tarefas.put("POST/atualizarEstoque", new AtualizaEstoque());
 		tarefas.put("GET/excluirEstoque", new ExcluiEstoque());
 		tarefas.put("GET/produtosLoja", new ProdutosLoja());
+		
+		//Loja
+		tarefas.put("GET/excluirLoja", new ExcluirLoja());
+		tarefas.put("GET/atualizarLoja", new AtualizarLoja());
+		tarefas.put("POST/atualizarLoja", new AtualizarLoja());
 	}
 
 	public static Tarefa getTarefa(HttpServletRequest request) {

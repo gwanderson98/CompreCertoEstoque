@@ -11,7 +11,8 @@ public class CadastrarProduto implements Tarefa {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// recuperar os parametros do formulario
-		JuncaoEstoqueProduto estoque = new JuncaoEstoqueProduto(Integer.parseInt(request.getParameter("quantidade")),request.getParameter("nome"),request.getParameter("codProduto"));
+		JuncaoEstoqueProduto estoque = new JuncaoEstoqueProduto(Integer.parseInt(request.getParameter("quantidade")),
+				request.getParameter("nome"),request.getParameter("codProduto"),Integer.parseInt(request.getParameter("quantidadeMinima")));
 		// enviar dados para o DAO persistir
 		new JuncaoEstoqueProdutoDAO().salvar(estoque);
 		//retornar o nome da view

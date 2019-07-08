@@ -14,14 +14,14 @@ public class Estoque {
 		this.quantidadeMinima = quantidadeMinima;
 	}
 
-	public Estoque( int quantidadeMinima, int quantidade) {
+	public Estoque(int quantidadeMinima, int quantidade) {
 		this.quantidade = quantidade;
 		this.quantidadeMinima = quantidadeMinima;
 	}
 
 
-	public Estoque(int idEstoque, int quantidadeMinima, int quantidade) {
-		this.idEstoque = idEstoque;
+	public Estoque(int idProduto, int quantidadeMinima, int quantidade) {
+		this.idProduto = idProduto;
 		this.quantidadeMinima = quantidadeMinima;
 		this.quantidade = quantidade;
 	}

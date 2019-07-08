@@ -18,11 +18,12 @@ public class EstoqueDAO implements DAO {
 		Estoque estoque = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "select Id_estoque, Quantidade_minima, Quantidade_produto from Estoque where Id_estoque =" + id
+			String sql = "select Id_estoque, Quantidade_minima,Id_produto_fk,Quantidade_produto from Estoque where Id_estoque =" + id
 					+ ";";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				estoque = new Estoque(rs.getInt("Id_estoque"), rs.getInt("Quantidade_minima"),
+				estoque = new Estoque(rs.getInt("Id_estoque"), rs.getInt("Quantidade_produto"),
+						rs.getInt("Id_produto_fk"),
 						rs.getInt("Quantidade_produto"));
 			}
 		} catch (SQLException se) {
@@ -53,8 +54,9 @@ public class EstoqueDAO implements DAO {
 		Estoque estoque = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "insert into Estoque( Quantidade_minima, Quantidade_produto) values ("
-					+ ((Estoque) entidade).getQuantidadeMinima() + ", " + ((Estoque) entidade).getQuantidade() + ");";
+			String sql = "insert into Estoque(Id_produto_fk,Quantidade_minima, Quantidade_produto) values ("
+					+ ((Estoque) entidade).getIdProduto() +", " + ((Estoque) entidade).getQuantidadeMinima() + ", " 
+					+ ((Estoque) entidade).getQuantidade() + ");";
 			System.out.println(sql);
 			stmt.executeUpdate(sql);
 		} catch (SQLException se) {
@@ -169,5 +171,7 @@ public class EstoqueDAO implements DAO {
 		}
 
 	}
+	
+	
 
 }
