@@ -5,21 +5,43 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de produtos</title>
+	<link rel="stylesheet" href="../styles/style.css">
+	<link rel="stylesheet" href="../styles/tachyons.css">
+	<link rel="stylesheet" href="../styles/suits.css">
+<title>Cadastro de Produto em Estoque - Compre Certo Estoque</title>
 </head>
 <body>
-<h1>Arquitetura de referência</h1>
-	<hr>
 	<c:choose>
 		<c:when test="${usuario != NULL}">
-			<h1>Olá ${usuario.nome}</h1>
-		<a href="logout">Logout</a>
-		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
-		<a href="listarProdutos">Listar Produtos</a>
-		<a href="exibeFormCadastroEstoque">Inserir no Estoque</a>
-		<a href="mostrarEstoque">Mostrar Estoque</a>
+      <div class="pt16 fixed bg-white w-100 top-0 header-nav">
+        <div class="flex justify-between diagram-project">
+          <div class="flex items-center justify-center pointer pb16 menu-dpw">
+            <img src="../images/menu.svg" alt="menu" class="pr10 menuIcon" id="menuIcon"/>
+            <span>Menu</span>
+            <div id='menu' class="absolute br3 menu">
+              <div class="flex flex-column">
+                <div><a href="listarProdutos">Produtos</a></div>
+                <div><a href="exibeFormCadastroProduto">Cadastrar Produto</a></div>
+                <div><a href="listarFuncionarioTodos">Funcionários</a></div>
+                <div><a href="exibeFormCadastroFuncionario">Cadastrar Funcionário</a></div>
+                <div><a href="mostrarEstoque">Estoque</a></div>
+                <div><a href="exibeFormCadastroEstoque">Cadastrar no Estoque</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="pointer pb16"><img src="../images/logo.svg" alt="Compre Certo Estoque"/></div>
+          <div class="flex items-center justify-center pointer pb16 menu-dpwUser">
+            <img src="../images/user.svg" alt="user" class="pa10"/>
+            <span>${usuario.nome}</span>
+            <img src="../images/arrow.svg" alt="\/" class="pl10"/>
+            <div id='menuUser' class="absolute br3 menuUser">
+              <div class="flex flex-column">
+                <div><a href="logout">Sair</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 		</c:when>
 
 		<c:otherwise>
@@ -31,12 +53,25 @@
 			</form>
 		</c:otherwise>
 	</c:choose>
-	<hr>
+	<div class="diagram-project pt72">
+		<h1 class="pt32 blue-title f36">Cadastar Estoque</h1>
+	</div>
 	${msg}
-	<form action="/comprecertoestoque/frontcontroller/inserirEstoque" method="POST">
-		Quantidade Minima<input name="quantidadeMinima">
-		Quantidade para inserir<input name="quantidade">
-		<input type="submit" value="salvar">
-	</form>
+	<div class="flex justify-center w-100">
+		<form action="/comprecertoestoque/frontcontroller/inserirEstoque" method="POST" class="w-34">
+			<div class="flex w-100 flex-column pb16">
+				<label for="qnt" class="mine-shaft f14 pb4">Quantidade</label>
+				<input name="quantidade" id="qnt" class="pa16 bl br bt bb b--light-silver br3" placeholder="Quantidade do produto">
+			</div>
+			<div class="flex w-100 flex-column pb16">
+				<label for="quant_min" class="mine-shaft f14 pb4">Quantidade mínima</label>
+				<input name="quantidadeMinima" id="quant_min" class="pa16 bl br bt bb b--light-silver br3" placeholder="Quantidade mínima de produto">
+			</div>
+			<div class="flex justify-between items-center pt32">
+				<a href="mostrarEstoque" class="link light-silver b">Cancelar</a>
+				<input type="submit" value="salvar" class="input-reset w-70 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">
+			</div>
+		</form>
+	</div>
 </body>
 </html>
