@@ -25,7 +25,7 @@ public class CadastrarFuncionario implements Tarefa {
 		new FuncionarioDAO().salvar(funcionario);
 		//retornar o nome da view
 		request.setAttribute("msg", "parab�ns usuario cadastrado com sucesso");
-		return "cadastroFuncionario";
+		return "index";
 	}
 
 }

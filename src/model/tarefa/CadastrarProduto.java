@@ -17,6 +17,6 @@ public class CadastrarProduto implements Tarefa {
 		new ProdutoDAO().salvar(produto);
 		//retornar o nome da view
 		request.setAttribute("msg", "parabéns produto cadastrado com sucesso");
-		return "cadastroProduto";
+		return "index";
 	}
 }

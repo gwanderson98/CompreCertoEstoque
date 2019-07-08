@@ -26,7 +26,7 @@ public class AtualizaEstoque implements Tarefa {
 		private String atualizaRegistroEstoque(HttpServletRequest request) {
 			Estoque estoque = new Estoque(Integer.parseInt(request.getParameter("idEstoque")),Integer.parseInt(request.getParameter("quantidadeMinima")), Integer.parseInt(request.getParameter("quantidade")),request.getParameter("nomeProduto"));
 			new EstoqueDAO().atualizar(estoque);
-			return "mostraEstoque";
+			return "index";
 		}
 	
 		private String exibeFormEstoque(HttpServletRequest request) {

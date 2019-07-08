@@ -43,7 +43,7 @@
 	<div class="diagram-project pt72">
 		<h1 class="pt32 blue-title f36">Atualizar Funcionário</h1>
 	</div>
-	<c:if test="${!empty usuario }">
+	<c:if test="${!empty funcionario }">
 		<div class="w-100 diagram-project flex items-center justify-center">
 			<form action="/comprecertoestoque/frontcontroller/atualizarFuncionario" method="POST" class="w-34 flex flex-column">
 				<input type="hidden" name="CPF" value="${entidade.CPF}">

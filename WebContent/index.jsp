@@ -6,6 +6,9 @@
 
 <head>
 	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="./styles/tachyons.css">
+	<link rel="stylesheet" href="./styles/suits.css">
 	<link rel="stylesheet" href="../styles/style.css">
 	<link rel="stylesheet" href="../styles/tachyons.css">
 	<link rel="stylesheet" href="../styles/suits.css">
@@ -65,7 +68,7 @@
 		<c:otherwise>
 			<div class="flex justify-center w-100 vh-100">
 				<form action="/comprecertoestoque/frontcontroller/login" method="post" class="w-34 flex flex-column items-center justify-center ">
-					<img src="../images/logo.svg" alt="Compre Certo Estoque" class="pb72"/>
+					<img src="../images/logo.svg" alt="Logo Compre Certo Estoque" class="pb72"/>
 					<div class="flex w-100 flex-column pb16">
 						<label class="mine-shaft f14 pb4" for="user-login">Usuário</label>
 						<input name="email" id="user-login" class="pa16 bl br bt bb b--light-silver br3" placeholder="Email">
@@ -75,8 +78,9 @@
 						<input type="password" name="senha" id="user-senha" class="pa16 bl br bt bb b--light-silver br3" placeholder="Senha" >
 					</div>
 					<c:if test="${erro != NULL}">${erro}</c:if>
-					<a href="/comprecertoestoque/frontcontroller/esqueciSenha" class="input-reset w-60 br3 pa16 button-ok white pointer b" style="backgroun-color:#3A3DA5">Esqueci a Senha</a>
+					
 					<div class="flex justify-between items-center pt32 w-100">
+						<a href="/comprecertoestoque/frontcontroller/esqueciSenha" class="link light-silver b">Esqueci a Senha</a>
 						<input type="submit" value="Logar" class="input-reset w-60 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">
 					</div>
 				</form>

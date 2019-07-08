@@ -6,25 +6,35 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Atualizar Funcionario</title>
+	<link rel="stylesheet" href="../styles/style.css">
+	<link rel="stylesheet" href="../styles/tachyons.css">
+	<link rel="stylesheet" href="../styles/suits.css">
+<title>Esqueci Senha</title>
 </head>
 <body>
-	<h1>Arquitetura de refer�ncia</h1>
-	<hr>
-			<h1>Ol� ${funcionario.nome}</h1>
-			<a href="logout">Logout</a>
-		<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-		<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-		<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
-		<a href="listarProdutos">Listar Produtos</a>
-		<a href="exibeFormCadastroEstoque">Inserir no Estoque</a>
-		<a href="mostrarEstoque">Mostrar Estoque</a>
-	<hr>
-		<form action="/comprecertoestoque/frontcontroller/atualizarSenha" method="POST">
-				Email:<input name="email"> 
-				Nova Senha:<input name="senha">
-				Confirme a Senha: <input name="confSenha">
-			<input type="submit" value="Atualizar">
+	<div class="diagram-project pt32">
+		<a href="login black pt10 f16 no-underline">Voltar</a>
+	</div>
+	<div class="diagram-project pt32">
+		<h1 class="blue-title f36">Esqueci Senha</h1>
+	</div>
+	<div class="diagram-project w-100 flex flex-column justify-center items-center">
+	<div class="pointer pb16"><img src="../images/logo.svg" alt="Compre Certo Estoque"/></div>
+		<form action="/comprecertoestoque/frontcontroller/atualizarSenha" method="POST" class="w-34 flex flex-column items-center">
+				<div class="flex w-100 flex-column pb16">
+					<label for="email" class="mine-shaft f14 pb4">Email</label>
+					<input name="email" id="email" class="pa16 bl br bt bb b--light-silver br3">
+				</div>
+				<div class="flex w-100 flex-column pb16">
+					<label for="senha" class="mine-shaft f14 pb4">Senha</label>
+					<input type="password" name="senha" id="senha" class="pa16 bl br bt bb b--light-silver br3">
+				</div>
+				<div class="flex w-100 flex-column pb16">
+					<label for="confSenha" class="mine-shaft f14 pb4">Confirmar senha</label>
+					<input type="password" name="confSenha" id="confSenha" class="pa16 bl br bt bb b--light-silver br3">
+				</div>
+			<input type="submit" value="Atualizar" class="input-reset w-70 br3 pa16 button-ok white pointer b" style="background-color:#3A3DA5">
 		</form>
+		</div>
 </body>
 </html>

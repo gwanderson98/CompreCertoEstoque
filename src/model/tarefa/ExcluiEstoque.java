@@ -11,7 +11,7 @@ public class ExcluiEstoque implements Tarefa {
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String idEstoque = request.getParameter("IdEstoque");
 		new EstoqueDAO().excluir(idEstoque);
-		return "mostraEstoque";
+		return "index";
 		
 	}
 

@@ -11,7 +11,7 @@ public class ExcluirProduto implements Tarefa {
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String idProduto = request.getParameter("Id_produto");
 		new ProdutoDAO().excluir(idProduto);
-		return "listaProdutos";
+		return "index";
 	}
 
 }

@@ -21,7 +21,7 @@ public class FuncionarioDAO implements DAO {
 		Funcionario funcionario = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM Funcionario where CPF='" + (String) CPF + "'";
+			String sql = "SELECT * FROM Funcionario where CPF='" + (String) CPF + "';";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				funcionario = new Funcionario(rs.getString("Telefone"), rs.getString("CPF"), rs.getString("Senha"),
