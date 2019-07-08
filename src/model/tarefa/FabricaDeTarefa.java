@@ -26,6 +26,7 @@ public class FabricaDeTarefa {
 		tarefas.put("GET/excluirFuncionario", new ExcluirFuncionario());
 		tarefas.put("GET/atualizarFuncionario", new AtualizarFuncionario());
 		tarefas.put("POST/atualizarFuncionario",new AtualizarFuncionario());
+		tarefas.put("GET/exibeInformacoesFuncionario", new ExibeInformacoesFuncionario());
 		tarefas.put("GET/esqueciSenha", new AtualizaSenha());
 		tarefas.put("POST/atualizarSenha", new AtualizaSenha());
 		//estoque
@@ -35,6 +36,12 @@ public class FabricaDeTarefa {
 		tarefas.put("GET/atualizarEstoque", new AtualizaEstoque());
 		tarefas.put("POST/atualizarEstoque", new AtualizaEstoque());
 		tarefas.put("GET/excluirEstoque", new ExcluiEstoque());
+		tarefas.put("GET/produtosLoja", new ProdutosLoja());
+		
+		//Loja
+		tarefas.put("GET/excluirLoja", new ExcluirLoja());
+		tarefas.put("GET/atualizarLoja", new AtualizarLoja());
+		tarefas.put("POST/atualizarLoja", new AtualizarLoja());
 	}
 
 	public static Tarefa getTarefa(HttpServletRequest request) {

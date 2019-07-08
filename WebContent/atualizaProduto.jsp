@@ -8,35 +8,15 @@
 <title>Atualizar Funcionario</title>
 </head>
 <body>
-	<h1>Arquitetura de refer�ncia</h1>
+	<h1>Atualiza Produto</h1>
 	<hr>
-	<c:choose>
-		<c:when test="${usuario != NULL}">
-			<h1>Ol� ${usuario.nome}</h1>
-			<a href="logout">Logout</a>
-			<a href="exibeFormCadastroFuncionario">Cadastrar novo Funcionario</a>
-			<a href="listarFuncionarioTodos">Listar Funcionarios </a>
-			<a href="exibeFormCadastroProduto">Cadastrar Produto</a>
-			<a href="listarProdutos">Listar Produtos</a>
-			<a href="exibeFormCadastroEstoque">Inserir no Estoque</a>
-			<a href="mostrarEstoque">Mostrar Estoque</a>
-		</c:when>
-
-		<c:otherwise>
-			<c:if test="${erro != NULL}">${erro}</c:if>
-
-			<form action="/comprecertoestoque/frontcontroller/login"
-				method="post">
-				Usuario:<input name="usuario"> Senha:<input name="senha">
-				<input type="submit" value="ok">
-			</form>
-		</c:otherwise>
-	</c:choose>
-	<hr>
-	<form action="/comprecertoestoque/frontcontroller/atualizarProduto" method="POST">
-		Id :<input name="Id_produto" value="${entidade.getIdProduto()}">
-		Nome:<input name="Nome" value="${entidade.getNome()}"> 
-		Codigo Produto: <input name="Cod_produto" value="${entidade.getCodProduto()}">		 
+	<form action="/comprecertoestoque/frontcontroller/atualizarLoja" method="POST">
+		<input type="hidden" name="IdProduto" value="${juncao.getIdProduto()}">
+		<input type="hidden" name="IdEstoque" value="${juncao.getIdEstoque()}">
+		Produto :<input name="Nome" value="${juncao.getNome()}"> 
+		Codigo Produto: <input name="CodProduto" value="${juncao.getCodProduto()}">	
+		Quantidade: <input name="Quantidade" value="${juncao.getQuantidade()}">
+		Quantidade Minima: <input name="QuantidadeMinima" value="${juncao.getQuantidadeMinima()}">
 		<input type="submit" value="Atualizar">
 	</form>
 </body>

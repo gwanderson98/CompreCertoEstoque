@@ -174,13 +174,13 @@ public class FuncionarioDAO implements DAO {
 		
 	}
 	
-	public Funcionario busca(String nomeFuncionario, String senha) {
+	public Funcionario busca(String email, String senha) {
 		Connection con = FabricaDeConexoes.getConnection();
 		Statement stmt = null;
 		Funcionario funcionario = null;
 		try {
 			stmt = con.createStatement();
-			String sql = "SELECT Id_func,Telefone,CPF,Senha, Nome_func, Email, Cargo FROM Funcionario where Nome_func ='" + nomeFuncionario + "' and Senha='" + senha + "'";
+			String sql = "SELECT Id_func,Telefone,CPF,Senha, Nome_func, Email, Cargo FROM Funcionario where Email ='" + email + "' and Senha='" + senha + "'";
 			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				int Id = rs.getInt("Id_func");

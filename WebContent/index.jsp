@@ -5,19 +5,52 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Arquitetura de referência</title>
+<title>Arquitetura de referï¿½ncia</title>
 </head>
 <body>
-	<h1>Compre Certo</h1>
-	<hr>
-	<form action="/comprecertoestoque/frontcontroller/login" method="post">
-		Email:<input name="email"> <br>
-		Senha:<input name="senha">
-		<input type="submit" value="ok">
-	</form>
+	<c:choose>
+		<c:when test="${funcionario != NULL}">
+		<div style="max-width=33%; float: left;"> 
+			<ul>
+			<p>Menu</p>
+				<li>
+					<a href="/comprecertoestoque/frontcontroller/login">HOME</a>
+				</li>
+				<li>
+					<a href="/comprecertoestoque/frontcontroller/produtosLoja">Produtos</a>
+				</li>
+			</ul>
+		</div>
+		<div style="float: none;text-align: center;">
+			<h1>Compre Certo</h1>
+		</div>
+		<div style="float: right;">
+			<ul>
+				<li>
+				<li>
+				</li>
+					<a href="/comprecertoestoque/frontcontroller/exibeInformacoesFuncionario">Perfil</a>
+					<a href="/comprecertoestoque/frontcontroller/logout">Logout</a>
+				</li>
+			</ul>
+			<p>${funcionario.getNomeFuncionario()}</p>
+			
+			
+		</div>
+		</c:when>
+		<c:otherwise>
+			<h1>Compre Certo</h1>
+			<hr>
+			<form action="/comprecertoestoque/frontcontroller/login" method="post">
+				Senha:<input name="senha"> <br>
+				Email:<input name="email"> <br>
+				<c:if test="${erro != NULL}">${erro}</c:if>
+			</form>
 	<form action="/comprecertoestoque/frontcontroller/esqueciSenha" method="get">
 		<input type="submit" value="Esqueci senha">
 	</form>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>
 
