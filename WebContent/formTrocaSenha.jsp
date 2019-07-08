@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="diagram-project pt32">
-		<a href="login black pt10 f16 no-underline">Voltar</a>
+		<a href="login" class="black pt10 f16 no-underline">Voltar</a>
 	</div>
 	<div class="diagram-project pt32">
 		<h1 class="blue-title f36">Esqueci Senha</h1>

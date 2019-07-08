@@ -13,7 +13,7 @@
 <body>
       <div class="pt16 fixed bg-white w-100 top-0 header-nav">
         <div class="flex justify-between diagram-project">
-          <div class="flex items-center justify-center pointer pb16 menu-dpw">
+          <div class="flex items-center justify-center pointer pb16 menu-dpw" tabindex="1">
             <img src="../images/menu.svg" alt="menu" class="pr10 menuIcon" id="menuIcon"/>
             <span>Menu</span>
             <div id='menu' class="absolute br3 menu">
@@ -27,8 +27,8 @@
               </div>
             </div>
           </div>
-          <div class="pointer pb16"><img src="../images/logo.svg" alt="Compre Certo Estoque"/></div>
-          <div class="flex items-center justify-center pointer pb16 menu-dpwUser">
+          <div class="pointer pb16"><img src="../images/logo.svg" alt="Compre Certo Estoque" tabindex="2"/></div>
+          <div class="flex items-center justify-center pointer pb16 menu-dpwUser" tabindex="3">
             <img src="../images/user.svg" alt="user" class="pa10"/>
             <span>${usuario.nome}</span>
             <img src="../images/arrow.svg" alt="\/" class="pl10"/>
@@ -41,13 +41,13 @@
         </div>
       </div>
 	<div class="diagram-project pt72">
-		<h1 class="pt32 blue-title f36">Atualizar Estoque</h1>nomeProduto
+		<h1 class="pt32 blue-title f36">Atualizar Estoque</h1>
 	</div>
 	<div class="w-100 flex justify-center">
 		<form action="/comprecertoestoque/frontcontroller/atualizarEstoque" method="POST" class="w-34">
 			<div class="flex w-100 flex-column pb16">
-				<label for="id_estoque" class="mine-shaft f14 pb4">Id Estoque</label>
-				<input name="idEstoque" id="id_estoque" class="pa16 bl br bt bb b--light-silver br3" value="${estoque.getIdEstoque()}">
+				<label for="id_estoque" class="mine-shaft f14 pb4 dn">Id Estoque</label>
+				<input name="idEstoque" id="id_estoque" class="pa16 bl br bt bb b--light-silver br3 dn" value="${estoque.getIdEstoque()}">
 			</div>
 			<div class="flex w-100 flex-column pb16">
 				<label for="id_estoque" class="mine-shaft f14 pb4">Nome Produto</label>

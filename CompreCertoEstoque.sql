@@ -55,24 +55,30 @@ CREATE TABLE Estoque(
     Quantidade_produto INT,
     FOREIGN KEY (Id_produto_fk) REFERENCES Produto(Id_produto)
 );
+INSERT INTO Estoque( Nome_produto, Quantidade_minima, Quantidade_produto) values('Teste',5,10);
 
 INSERT INTO Funcionario (Email,Nome_func,Senha,Cargo,CPF,Telefone)
 VALUES	('marcoantoniozxcv@gmail.com','Marco Antonio','123456',1,'922.778.280-09','+55(34)99697-6165'),
 		('gwanderson98@gmail.com','Wanderson','123456',2,'530.658.360-17','+55(34)99898-2316'),
         ('marcoantonio@gmail.com','Marco','123456',2,'473.745.630-60','+55(34)98765-4123'),
         ('gwanderson@gmail.com','Anderson','123456',1,'501.689.070-62','+55(41)12345-6789');
+        
+SELECT Id_func,Telefone,CPF,Senha, Nome_func, Email, Cargo FROM Funcionario where Email ='marcoantonio@gmail.com' and Senha='123456';
 
+select * from Funcionario;
+SELECT * FROM Funcionario where CPF='" + (String) CPF + "';
 INSERT INTO Produto(Nome,Cod_produto)
 VALUES	('Vitamina C','12345678654'),
 		('Vitamina D','321654789963'),
 		('Vitamina E','987654312123'),
         ('Omega 3', '963852741123');
 
-INSERT INTO Estoque(Id_produto_fk, NomeProduto, Quantidade_minima, Quantidade_produto) 
+INSERT INTO Estoque(Id_produto_fk, Nome_produto, Quantidade_minima, Quantidade_produto) 
 values (1,"Anador",5,10),
 	   (2,"Doril",6,12),
        (3,"Dorflex",7,14),
        (4,"Benegripe",8,16);
+select Id_estoque, Nome_produto, Quantidade_minima, Quantidade_produto from Estoque;
         
 INSERT INTO Operacao(Tipo_operacao,Data_operacao,Id_func_fk)
 VALUES	('E','2019-06-14',1),
@@ -94,5 +100,8 @@ VALUES	(1,1,10),
         
 INSERT INTO usuarios
 values(1,'teste','123','teste');
+
+select * from Funcionario;
+
 
 

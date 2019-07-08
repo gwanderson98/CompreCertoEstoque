@@ -48,7 +48,7 @@
 		<form action="/comprecertoestoque/frontcontroller/inserirEstoque" method="POST" class="w-34">
 		<div class="flex w-100 flex-column pb16">
 				<label for="qnt" class="mine-shaft f14 pb4">Nome Produto</label>
-				<input name="nomeProduto" id="qnt" class="pa16 bl br bt bb b--light-silver br3" placeholder="Quantidade do produto">
+				<input name="nomeProduto" id="qnt" class="pa16 bl br bt bb b--light-silver br3" placeholder="Nome do produto">
 			</div>
 			<div class="flex w-100 flex-column pb16">
 				<label for="qnt" class="mine-shaft f14 pb4">Quantidade</label>

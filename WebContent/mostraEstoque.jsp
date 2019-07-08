@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-          <div class="pointer pb16"><img src="../images/logo.svg" alt="Compre Certo Estoque"/></div>
+          <div class="pointer pb16"> <img src="../images/logo.svg" alt="Compre Certo Estoque"/></div>
           <div class="flex items-center justify-center pointer pb16 menu-dpwUser">
             <img src="../images/user.svg" alt="user" class="pa10"/>
             <span>${usuario.nome}</span>

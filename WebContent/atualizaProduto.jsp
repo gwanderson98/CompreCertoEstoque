@@ -45,8 +45,8 @@
 	<div class="w-100 flex items-center justify-center">
 		<form action="/comprecertoestoque/frontcontroller/atualizarProduto" method="POST" class="pt42 w-34 flex flex-column">
 			<div class="flex w-100 flex-column pb16">
-				<label class="mine-shaft f14 pb4" for="Id_produto">Id</label>
-				<input disabled name="Id_produto" id="Id_produto" class="pa16 bl br bt bb b--light-silver br3" value="${entidade.getIdProduto()}">
+				<label class="mine-shaft f14 pb4 dn" for="Id_produto">Id</label>
+				<input name="Id_produto" id="Id_produto" class="dn pa16 bl br bt bb b--light-silver br3" value="${entidade.getIdProduto()}">
 			</div>
 			<div class="flex w-100 flex-column pb16">
 				<label class="mine-shaft f14 pb4" for="Nome">Nome</label>

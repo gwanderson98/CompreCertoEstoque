@@ -68,7 +68,7 @@
 		<c:otherwise>
 			<div class="flex justify-center w-100 vh-100">
 				<form action="/comprecertoestoque/frontcontroller/login" method="post" class="w-34 flex flex-column items-center justify-center ">
-					<img src="../images/logo.svg" alt="Logo Compre Certo Estoque" class="pb72"/>
+					<img src="./images/logo.svg" alt="Logo Compre Certo Estoque" class="pb72"/>
 					<div class="flex w-100 flex-column pb16">
 						<label class="mine-shaft f14 pb4" for="user-login">Usuário</label>
 						<input name="email" id="user-login" class="pa16 bl br bt bb b--light-silver br3" placeholder="Email">
